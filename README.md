@@ -69,22 +69,26 @@ Total Queries Processed: 1
 
 Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119GB RAM).
 
+*Benchmark date: 2025-12-18*
+
 ### Cold Start vs Pre-warmed Image
 
 | Metric | Cold Start | Pre-warmed Image |
 |--------|------------|------------------|
-| `evoformer_attn` load | ~156 seconds | ~0.05 seconds |
-| Ubiquitin inference | ~3 minutes | ~9 seconds |
+| `evoformer_attn` load | ~156 seconds | ~0.07 seconds |
+| Ubiquitin inference | ~3 minutes | **9 seconds** |
 
-### Example Inference Times (Pre-warmed)
+### Inference Benchmarks (Pre-warmed Image)
 
-| Example | Description | Time |
-|---------|-------------|------|
-| `query_ubiquitin.json` | Simple protein (76 residues) | **9.2s** |
-| `query_homomer.json` | Protein homomer | **8.6s** |
-| `query_dna_ptm.json` | DNA with modifications | **7.1s** |
-| `query_multimer.json` | Protein multimer complex | **125.5s** |
-| `query_protein_ligand.json` | Protein-ligand (MCL1) | **189.0s** |
-| `query_protein_ligand_multiple.json` | Multiple protein-ligand | **~185-189s** |
+The table below shows **pure inference time** (GPU computation only) vs **total time** (includes Docker container startup, model loading, and cleanup):
 
-> **Note**: Larger complexes and protein-ligand predictions take longer due to increased computational complexity.
+| Example | Description | Inference | Total | Overhead |
+|---------|-------------|-----------|-------|----------|
+| `query_ubiquitin.json` | Simple protein (76 residues) | **9s** | 53s | ~44s |
+| `query_homomer.json` | Protein homomer | **8s** | 43s | ~35s |
+| `query_dna_ptm.json` | DNA with post-translational modifications | **7s** | 41s | ~34s |
+| `query_multimer.json` | Protein multimer complex | **2m 11s** | 177s | ~46s |
+| `query_protein_ligand.json` | Protein-ligand (MCL1) | **3m 16s** | 239s | ~43s |
+| `query_protein_ligand_multiple.json` | Multiple protein-ligand (2 queries) | **6m 30s** | 429s | ~39s |
+
+> **Note**: Container overhead (~35-45s) includes Docker startup, PyTorch/DeepSpeed initialization, and model weight loading. For batch processing, consider keeping the container running to amortize this cost.

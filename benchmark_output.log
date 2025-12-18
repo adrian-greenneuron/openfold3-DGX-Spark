@@ -1,0 +1,97 @@
+==============================================
+ OpenFold3 Benchmark Suite - DGX Spark
+==============================================
+CPU Cores: 20
+RAM: 119Gi
+GPU: NVIDIA GB10
+
+==========================================
+Running: query_ubiquitin.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.11176061630249023 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  1
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:09 • 0:00:00 0.00it/s 
+>>> Duration: 53s
+
+==========================================
+Running: query_homomer.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.06805872917175293 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  1
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:08 • 0:00:00 0.00it/s 
+>>> Duration: 43s
+
+==========================================
+Running: query_multimer.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.0724632740020752 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  1
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:02:11 • 0:00:00 0.00it/s 
+>>> Duration: 177s
+
+==========================================
+Running: query_dna_ptm.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.07283258438110352 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  1
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:00:07 • 0:00:00 0.00it/s 
+>>> Duration: 41s
+
+==========================================
+Running: query_protein_ligand.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.0834205150604248 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  1
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/1 0:03:16 • 0:00:00 0.00it/s 
+>>> Duration: 239s
+
+==========================================
+Running: query_protein_ligand_multiple.json
+==========================================
+Emitting ninja build file /root/.cache/torch_extensions/py312_cu128/evoformer_attn/build.ninja...
+Building extension module evoformer_attn...
+Loading extension module evoformer_attn...
+Time to load evoformer_attn op: 0.07914280891418457 seconds
+    PREDICTION SUMMARY (COMPLETE)    
+  - Successful Queries:  2
+  - Failed Queries:      0
+Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2/2 0:06:30 • 0:00:00 0.00it/s 
+>>> Duration: 429s
+
+==============================================
+ BENCHMARK RESULTS - DGX Spark (GB10)
+==============================================
+Example                               Time (s)
+----------------------------------------------
+query_ubiquitin.json                        53
+query_homomer.json                          43
+query_multimer.json                        177
+query_dna_ptm.json                          41
+query_protein_ligand.json                  239
+query_protein_ligand_multiple.json         429
+==============================================

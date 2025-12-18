@@ -1,0 +1,36 @@
+=== 02:16:50 ===
+top - 02:16:50 up  8:20,  5 users,  load average: 1.32, 1.31, 1.08
+Tasks: 544 total,   2 running, 541 sleeping,   0 stopped,   1 zombie
+%Cpu(s):  2.9 us,  2.4 sy,  0.0 ni, 92.3 id,  2.4 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem : 122570.3 total,  52533.3 free,   6321.4 used,  65688.0 buff/cache     
+MiB Swap:  16384.0 total,  16383.5 free,      0.5 used. 116248.9 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 216034 adrian    20   0 7349172 308808  64404 S  70.0   0.2   2:41.29 languag+
+     57 root      20   0       0      0      0 S  10.0   0.0   0:00.61 ksoftir+
+   1365 root      20   0       0      0      0 S  10.0   0.0   3:56.87 napi/ph+
+ 270365 root      20   0    3144   2032   1816 S  10.0   0.0   0:00.01 nvidia-+
+ 270374 nobody    20   0  196724  20548   5460 S  10.0   0.0   0:00.01 nvc:[dr+
+ 270383 root      20   0    1376   1068    644 D  10.0   0.0   0:00.01 memfd:/+
+      1 root      20   0   23568  14012   8680 S   0.0   0.0   0:07.21 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 kthreadd
+0 %, [N/A], [N/A]
+
+=== 02:17:00 ===
+top - 02:17:00 up  8:20,  5 users,  load average: 1.58, 1.36, 1.11
+Tasks: 542 total,   3 running, 538 sleeping,   0 stopped,   1 zombie
+%Cpu(s):  5.7 us,  1.0 sy,  0.0 ni, 93.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem : 122570.3 total,  49240.8 free,   9603.0 used,  65698.8 buff/cache     
+MiB Swap:  16384.0 total,  16383.5 free,      0.5 used. 112967.3 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 270358 root      20   0   21.8g   3.5g 385088 R 118.2   2.9   0:13.53 run_ope+
+   3022 gdm       20   0 4010528 242160 144900 S   9.1   0.2   0:24.72 gnome-s+
+ 270764 adrian    20   0   25420   5264   3156 R   9.1   0.0   0:00.01 top
+      1 root      20   0   23568  14012   8680 S   0.0   0.0   0:07.21 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.12 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_wo+
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker+
+1 %, [N/A], [N/A]
+
