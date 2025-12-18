@@ -47,16 +47,9 @@ RUN pip install --no-cache-dir \
 #    - Problem: DeepSpeed misparses '12.1' as '1.' causing 'compute_1.' error.
 #    - Problem: NVCC 12.8 rejects 'compute_121'.
 #    - Fix: Clean up version string and map '121' to '120'.
+COPY patch_ds.py /opt/patch_ds.py
 RUN pip install deepspeed==0.15.4 \
-    && python3 -c ' \
-    import os; \
-    target = "/usr/local/lib/python3.12/dist-packages/deepspeed/ops/op_builder/builder.py"; \
-    content = open(target).read(); \
-    patch = "num = cc.replace(\"+PTX\",\"\").replace(\".\",\"\");\n            if num == \"121\": num=\"120\""; \
-    new_content = content.replace("num = cc[0] + cc[2]", patch); \
-    open(target,"w").write(new_content); \
-    print("SUCCESS: Patched DeepSpeed builder.py for Blackwell compatibility"); \
-    '
+    && python3 /opt/patch_ds.py
 
 # -----------------------------------------------------------------------------
 # CUTLASS & OpenFold3 Source
@@ -80,6 +73,11 @@ RUN pip install --pre triton --index-url https://download.pytorch.org/whl/nightl
 # -----------------------------------------------------------------------------
 # Pre-create cache directories
 RUN mkdir -p /root/.openfold3 /root/.triton/autotune
+
+# Download model parameters
+RUN bash /opt/openfold-3/openfold3/scripts/download_openfold3_params.sh --download_dir=/root/.openfold3
+
+
 
 WORKDIR /opt/openfold-3
 CMD ["/bin/bash"]
