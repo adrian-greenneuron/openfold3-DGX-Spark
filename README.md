@@ -65,9 +65,26 @@ Total Queries Processed: 1
 - **Model Weights**: Embedded in image (`of3_ft3_v1.pt`, ~2GB)
 - **Architecture**: Explicitly maps invalid `compute_121` flags to compatible `compute_120` flags for NVCC, while preserving `sm_121` for Triton.
 
-## Performance
+## Benchmark Results
+
+Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119GB RAM).
+
+### Cold Start vs Pre-warmed Image
 
 | Metric | Cold Start | Pre-warmed Image |
 |--------|------------|------------------|
 | `evoformer_attn` load | ~156 seconds | ~0.05 seconds |
-| Total inference time | ~3 minutes | ~9 seconds |
+| Ubiquitin inference | ~3 minutes | ~9 seconds |
+
+### Example Inference Times (Pre-warmed)
+
+| Example | Description | Time |
+|---------|-------------|------|
+| `query_ubiquitin.json` | Simple protein (76 residues) | **9.2s** |
+| `query_homomer.json` | Protein homomer | **8.6s** |
+| `query_dna_ptm.json` | DNA with modifications | **7.1s** |
+| `query_multimer.json` | Protein multimer complex | **125.5s** |
+| `query_protein_ligand.json` | Protein-ligand (MCL1) | **189.0s** |
+| `query_protein_ligand_multiple.json` | Multiple protein-ligand | **~185-189s** |
+
+> **Note**: Larger complexes and protein-ligand predictions take longer due to increased computational complexity.
