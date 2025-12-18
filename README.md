@@ -92,3 +92,85 @@ The table below shows **pure inference time** (GPU computation only) vs **total 
 | `query_protein_ligand_multiple.json` | Multiple protein-ligand (2 queries) | **6m 30s** | 429s | ~39s |
 
 > **Note**: Container overhead (~35-45s) includes Docker startup, PyTorch/DeepSpeed initialization, and model weight loading. For batch processing, consider keeping the container running to amortize this cost.
+
+## Custom Input
+
+To run inference on your own proteins, create a JSON query file:
+
+```json
+{
+  "name": "my_protein",
+  "modelSeeds": [42],
+  "sequences": [
+    {
+      "protein": {
+        "id": "A",
+        "sequence": "MKTAYIAKQRQISFVKSHFSRQ..."
+      }
+    }
+  ]
+}
+```
+
+Then mount it into the container:
+
+```bash
+docker run --gpus all --ipc=host --shm-size=64g \
+    -v $(pwd)/my_query.json:/input/query.json \
+    -v $(pwd)/output:/output \
+    openfold3-spark:latest \
+    run_openfold predict \
+    --query_json=/input/query.json \
+    --output_dir=/output
+```
+
+See the [OpenFold3 documentation](https://github.com/aqlaboratory/openfold) for full query format details including multi-chain complexes, ligands, and DNA/RNA.
+
+## Batch Processing
+
+To avoid the ~40s container startup overhead per prediction, keep the container running:
+
+```bash
+# Start interactive container
+docker run -it --gpus all --ipc=host --shm-size=64g \
+    -v $(pwd)/queries:/queries \
+    -v $(pwd)/output:/output \
+    openfold3-spark:latest bash
+
+# Inside container, run multiple predictions
+for q in /queries/*.json; do
+    run_openfold predict --query_json=$q --output_dir=/output
+done
+```
+
+## Requirements
+
+- **Hardware**: NVIDIA GPU with CUDA support (tested on DGX Spark with GB10)
+- **Docker**: 20.10+ with NVIDIA Container Toolkit
+- **Disk Space**: ~30GB for the Docker image
+- **Memory**: 64GB+ recommended (set via `--shm-size`)
+
+## Troubleshooting
+
+### "compute_121 is not recognized"
+This error occurs on Blackwell GPUs due to NVCC not supporting `compute_121`. The `patch_ds.py` script in this repo fixes this by mapping to `compute_120`. Make sure you're using the pre-built image from `./build.sh`.
+
+### "ninja: error: loading 'build.ninja'"
+The CUDA kernels weren't pre-compiled. Rebuild the image using `./build.sh` which runs a warmup inference to trigger JIT compilation.
+
+### Out of Memory (OOM)
+- Increase shared memory: `--shm-size=128g`
+- For very large proteins, consider reducing batch size or using CPU offloading
+
+### Slow First Run (~3 minutes)
+This is expected on a fresh build. The `build.sh` script pre-compiles kernels to avoid this. If you're seeing slow runs, the image may not have been properly warmed up.
+
+## Resources
+
+- [OpenFold3 GitHub](https://github.com/aqlaboratory/openfold)
+- [NVIDIA NGC PyTorch Containers](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)
+- [DeepSpeed Documentation](https://www.deepspeed.ai/)
+
+## License
+
+This deployment is provided for use with OpenFold3. See the [OpenFold License](https://github.com/aqlaboratory/openfold/blob/main/LICENSE) for terms.
