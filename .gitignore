@@ -1,3 +1,6 @@
 # Large files
 weights/
 output/
+
+# Log files
+*.log
