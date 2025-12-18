@@ -9,9 +9,9 @@ FROM nvcr.io/nvidia/pytorch:25.01-py3
 # -----------------------------------------------------------------------------
 # Build Configuration
 # -----------------------------------------------------------------------------
-ENV MAX_JOBS=4 \
-    NVCC_THREADS=4 \
-    OMP_NUM_THREADS=4 \
+ENV MAX_JOBS=16 \
+    NVCC_THREADS=8 \
+    OMP_NUM_THREADS=16 \
     # Force architecture to 12.0 to avoid parsing bugs with 12.1 in some tools,
     # though DeepSpeed patch below handles the runtime detection.
     TORCH_CUDA_ARCH_LIST="12.0" \

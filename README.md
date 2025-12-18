@@ -31,7 +31,7 @@ You can run inference using the `run_openfold` command inside the container.
 
 **Example Command:**
 ```bash
-docker run --gpus all --ipc=host --shm-size=32g \
+docker run --gpus all --ipc=host --shm-size=64g \
     -v $(pwd)/output:/output \
     openfold3-spark:latest \
     run_openfold predict \
