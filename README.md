@@ -99,7 +99,7 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 
 > **Note**: CUDA 12.8 has ~5-8s faster container overhead. GPU inference time is **identical**. For long-running queries, the overhead difference is negligible (<3%).
 >
-> **Root Cause**: Nsight Systems profiling reveals that CUDA 13's `cuLibraryLoadData` function takes ~1.2s to load 46 GPU libraries, compared to near-instant loading on CUDA 12.8. This is inherent to CUDA 13's new lazy library loading mechanism and cannot be optimized at the application level.
+> **Root Cause**: Nsight Systems profiling reveals that CUDA 13's `cuLibraryLoadData` function takes ~1.2s to load 46 GPU libraries, compared to near-instant loading on CUDA 12.8. This is appears inherent to CUDA 13's new lazy library loading mechanism and cannot be optimized at the application level. I think we will just need to wait for future releases of CUDA 13 and/or PyTorch.
 
 ### Cold Start vs Pre-warmed
 
