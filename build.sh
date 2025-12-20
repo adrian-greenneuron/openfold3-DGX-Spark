@@ -12,6 +12,9 @@
 #   SKIP_WARMUP=true  - Skip the pre-compilation step (faster build, slower first run)
 # =============================================================================
 
+# Enable BuildKit for cache mounts (required for NGC 25.11 / CUDA 13.0)
+export DOCKER_BUILDKIT=1
+
 set -e
 
 IMAGE_NAME="${1:-openfold3-spark:latest}"

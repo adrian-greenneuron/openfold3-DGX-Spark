@@ -1,10 +1,10 @@
 # =============================================================================
 # OpenFold3 Dockerfile for NVIDIA DGX Spark (ARM64 / Grace Blackwell GB10)
 # =============================================================================
-# Base Image: NGC PyTorch 25.01-py3 (Contains CUDA 12.8, PyTorch 2.6.0a0)
-# This base image provides critical support for ARM64 and Blackwell (sm_121).
+# Base Image: NGC PyTorch 25.11-py3 (Contains CUDA 13.0, PyTorch 2.10)
+# This base image provides native Blackwell nvrtc sm_120/sm_121 support.
 
-FROM nvcr.io/nvidia/pytorch:25.01-py3
+FROM nvcr.io/nvidia/pytorch:25.11-py3
 
 # -----------------------------------------------------------------------------
 # Build Configuration
@@ -12,8 +12,6 @@ FROM nvcr.io/nvidia/pytorch:25.01-py3
 ENV MAX_JOBS=16 \
     NVCC_THREADS=8 \
     OMP_NUM_THREADS=16 \
-    # Force architecture to 12.0 to avoid parsing bugs with 12.1 in some tools,
-    # though DeepSpeed patch below handles the runtime detection.
     TORCH_CUDA_ARCH_LIST="12.0" \
     CUTLASS_PATH=/opt/cutlass \
     KMP_AFFINITY=none \
@@ -21,19 +19,22 @@ ENV MAX_JOBS=16 \
     DS_BUILD_CPU_ADAM=0 \
     DS_BUILD_CCL_COMM=0 \
     PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
+    PYTHONDONTWRITEBYTECODE=1 \
+    DEBIAN_FRONTEND=noninteractive
 
 # -----------------------------------------------------------------------------
 # System Dependencies
 # -----------------------------------------------------------------------------
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    hmmer kalign aria2 libxrender1 libxext6 libsm6 libxft2 \
-    && rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && apt-get install -y --no-install-recommends \
+    hmmer kalign aria2 libxrender1 libxext6 libsm6 libxft2
 
 # -----------------------------------------------------------------------------
 # Python Dependencies
 # -----------------------------------------------------------------------------
-RUN pip install --no-cache-dir \
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install --no-cache-dir \
     rdkit biopython typing-extensions modelcif memory_profiler \
     func_timeout pdbeccdutils pytorch-lightning biotite==1.2.0 \
     "nvidia-cutlass<4" py-cpuinfo lmdb aria2p ijson boto3 \
@@ -48,7 +49,8 @@ RUN pip install --no-cache-dir \
 #    - Problem: NVCC 12.8 rejects 'compute_121'.
 #    - Fix: Clean up version string and map '121' to '120'.
 COPY patch_ds.py /opt/patch_ds.py
-RUN pip install deepspeed==0.15.4 \
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install deepspeed==0.15.4 \
     && python3 /opt/patch_ds.py
 
 # -----------------------------------------------------------------------------

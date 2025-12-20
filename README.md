@@ -5,7 +5,7 @@ This repository provides a specialized Docker deployment for running **OpenFold3
 This build solves specific compatibility issues ("Dependency Hell") encountered on the Blackwell platform, including:
 - **Triton Compatibility**: Uses `triton-nightly` to support `sm_121` (Blackwell) kernels.
 - **DeepSpeed Fixes**: Patches DeepSpeed JIT compilation to correctly parse `sm_121` architecture flags (mapping to `sm_120` for NVCC compatibility).
-- **ARM64 Support**: Built on the `nvcr.io/nvidia/pytorch:25.01-py3` base image for native ARM64 optimization.
+- **ARM64 Support**: Built on the `nvcr.io/nvidia/pytorch:25.11-py3` base image (CUDA 13.0) for native ARM64 optimization.
 - **Pre-compiled Kernels**: Uses a `docker commit` workflow to bake JIT-compiled CUDA kernels into the image.
 
 ## Getting Started
@@ -59,8 +59,9 @@ Total Queries Processed: 1
 
 ## Technical Details
 
-- **Base Image**: `nvcr.io/nvidia/pytorch:25.01-py3`
-- **CUDA Version**: 12.8
+- **Base Image**: `nvcr.io/nvidia/pytorch:25.11-py3`
+- **CUDA Version**: 13.0
+- **PyTorch Version**: 2.10
 - **DeepSpeed**: 0.15.4 (Pinned to avoid Muon optimizer conflicts)
 - **Model Weights**: Embedded in image (`of3_ft3_v1.pt`, ~2GB)
 - **Architecture**: Explicitly maps invalid `compute_121` flags to compatible `compute_120` flags for NVCC, while preserving `sm_121` for Triton.
