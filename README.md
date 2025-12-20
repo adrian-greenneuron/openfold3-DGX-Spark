@@ -93,14 +93,16 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 
 Total time = Docker startup + model loading + inference + cleanup:
 
-| Example | Description | CUDA 13.0 Avg | CUDA 12.8 Avg | Diff |
-|---------|-------------|---------------|---------------|------|
-| `query_ubiquitin.json` | Simple protein (76 residues) | 55s | 49s | +6s |
-| `query_homomer.json` | Protein homomer | 51s | 43s | +8s |
-| `query_dna_ptm.json` | DNA with modifications | 47s | 40s | +7s |
-| `query_multimer.json` | Protein multimer | 173s | 168s | +5s |
-| `query_protein_ligand.json` | Protein-ligand (MCL1) | 228s | 223s | +5s |
-| `query_protein_ligand_multiple.json` | Multiple protein-ligand | 403s | 406s | **-3s** |
+| Example | Description | CUDA 13.0 | CUDA 12.8 | Diff | % |
+|---------|-------------|-----------|-----------|------|---|
+| `query_ubiquitin.json` | Simple protein (76 residues) | 55s | 49s | +6s | +12% |
+| `query_homomer.json` | Protein homomer | 51s | 43s | +8s | +19% |
+| `query_dna_ptm.json` | DNA with modifications | 47s | 40s | +7s | +18% |
+| `query_multimer.json` | Protein multimer | 173s | 168s | +5s | +3% |
+| `query_protein_ligand.json` | Protein-ligand (MCL1) | 228s | 223s | +5s | +2% |
+| `query_protein_ligand_multiple.json` | Multiple protein-ligand | 403s | 406s | -3s | **-1%** |
+
+> **Note**: CUDA 13's overhead (container startup/PyTorch init) is ~5-8s slower than CUDA 12.8. GPU inference time is **identical**. For long-running queries, the overhead difference is negligible (<3%).
 
 **Inference time** (GPU computation only, identical for both):
 
