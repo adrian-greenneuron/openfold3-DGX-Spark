@@ -3,7 +3,7 @@
 This repository provides a specialized Docker deployment for running **OpenFold3** on the NVIDIA DGX Spark system, powered by **Grace Blackwell (GB10)** GPUs and **ARM64** architecture.
 
 This build solves specific compatibility issues ("Dependency Hell") encountered on the Blackwell platform, including:
-- **Triton Compatibility**: Uses `triton-nightly` to support `sm_121` (Blackwell) kernels.
+- **Triton Compatibility**: NGC 25.11 includes native Triton 3.5.0 with `sm_121` (Blackwell) support.
 - **DeepSpeed Fixes**: Patches DeepSpeed JIT compilation to correctly parse `sm_121` architecture flags (mapping to `sm_120` for NVCC compatibility).
 - **ARM64 Support**: Built on the `nvcr.io/nvidia/pytorch:25.11-py3` base image (CUDA 13.0) for native ARM64 optimization.
 - **Pre-compiled Kernels**: Uses a `docker commit` workflow to bake JIT-compiled CUDA kernels into the image.
