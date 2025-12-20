@@ -84,7 +84,7 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 | `query_protein_ligand_multiple.json` | 403s | 5m 55s | **54 GB** |
 
 > **Total Time** = Container startup + model loading + inference + cleanup  
-> **Memory** = Peak unified memory (119 GB available on DGX Spark)
+> **Memory** = Peak system memory (unified CPU/GPU). System at rest uses ~5 GB. DGX Spark has 119 GB total.
 
 ### CUDA 13.0 vs CUDA 12.8 Comparison
 
