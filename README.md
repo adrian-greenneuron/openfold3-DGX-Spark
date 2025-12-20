@@ -115,13 +115,18 @@ Total time = Docker startup + model loading + inference + cleanup:
 | `query_protein_ligand.json` | 3m 0-5s |
 | `query_protein_ligand_multiple.json` | 5m 55s - 6m 8s |
 
-### Memory Usage
+### Memory Usage (Peak System Memory)
 
-| Query Type | Peak Memory |
-|------------|-------------|
-| Simple (ubiquitin, homomer, dna_ptm) | **~16-26 GB** |
-| Complex (multimer, protein_ligand) | **~42-54 GB** |
-| Maximum observed | **54 GB** of 119 GB |
+| Query | Peak Memory |
+|-------|-------------|
+| `query_ubiquitin.json` | ~16 GB |
+| `query_homomer.json` | ~16 GB |
+| `query_dna_ptm.json` | ~15 GB |
+| `query_multimer.json` | ~26 GB |
+| `query_protein_ligand.json` | ~42 GB |
+| `query_protein_ligand_multiple.json` | **~54 GB** |
+
+> DGX Spark has 119 GB unified memory shared between CPU/GPU. Maximum observed: 54 GB (45% utilization).
 
 > **Summary**: CUDA 12.8 shows ~5-8s faster container overhead compared to CUDA 13.0. Pure GPU inference time is identical between versions. For batch workloads where container startup is amortized, both perform equivalently.
 
