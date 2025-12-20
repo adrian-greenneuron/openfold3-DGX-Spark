@@ -70,24 +70,43 @@ Total Queries Processed: 1
 
 Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119GB RAM).
 
-### Performance Summary (Pre-warmed Images)
+### CUDA 13.0 vs CUDA 12.8 Comparison
 
-*Benchmark date: 2025-12-20*
+| Component | CUDA 13.0 (NGC 25.11) | CUDA 12.8 (NGC 25.01) |
+|-----------|----------------------|----------------------|
+| **Base Image** | `nvcr.io/nvidia/pytorch:25.11-py3` | `nvcr.io/nvidia/pytorch:25.01-py3` |
+| **CUDA Version** | 13.0.88 | 12.8.61 |
+| **PyTorch Version** | 2.10.0a0 | 2.6.0a0 |
+| **Triton** | 3.5.0 (native) | Nightly (cu128) |
+| **PTXAS** | 13.0.88 | 12.8.61 |
+| **DeepSpeed** | 0.15.4 (patched) | 0.15.4 (patched) |
+
+> [!TIP]
+> CUDA 13.0 uses NGC 25.11's native Triton 3.5.0, which includes full Blackwell optimization. CUDA 12.8 requires Triton nightly from the `cu128` index since the bundled version is too old for `sm_121`.
+
+### Cold Start vs Pre-warmed Performance
 
 | Metric | Cold Start | Pre-warmed Image |
 |--------|------------|------------------|
-| `evoformer_attn` load | ~156 seconds | ~0.5 seconds |
+| `evoformer_attn` JIT compile | ~156 seconds | ~0.5 seconds |
 | Ubiquitin inference | ~3 minutes | **9 seconds** |
 
-The table below shows **total time** (includes Docker container startup, model loading, inference, and cleanup):
+### Detailed Benchmark Comparison
 
-| Example | Description | CUDA 13.0 | CUDA 12.8 |
-|---------|-------------|-----------|-----------|
-| `query_ubiquitin.json` | Simple protein (76 residues) | 56s | 53s |
-| `query_dna_ptm.json` | DNA with post-translational modifications | **47s** | 41s |
-| `query_protein_ligand.json` | Protein-ligand (MCL1) | **224s** | 239s |
+*Benchmark date: 2025-12-20*
 
-> **Note**: CUDA 13.0 (NGC 25.11) now performs on par with CUDA 12.8 (NGC 25.01). Container overhead (~35-45s) includes Docker startup, PyTorch/DeepSpeed initialization, and model weight loading. For batch processing, consider keeping the container running to amortize this cost.
+The table below shows **total time** (Docker startup + model loading + inference + cleanup):
+
+| Example | Description | CUDA 13.0 | CUDA 12.8 | Difference |
+|---------|-------------|-----------|-----------|------------|
+| `query_ubiquitin.json` | Simple protein (76 residues) | 56s | 53s | +3s |
+| `query_homomer.json` | Protein homomer | 51s | 43s | +8s |
+| `query_dna_ptm.json` | DNA with modifications | 47s | 41s | +6s |
+| `query_multimer.json` | Protein multimer complex | ~180s | 177s | ~+3s |
+| `query_protein_ligand.json` | Protein-ligand (MCL1) | **224s** | 239s | **-15s** |
+| `query_protein_ligand_multiple.json` | Multiple protein-ligand | ~430s | 429s | ~0s |
+
+> **Summary**: CUDA 13.0 and CUDA 12.8 perform comparably, with CUDA 13.0 showing slight improvements on complex protein-ligand workloads. Container overhead (~35-45s) includes Docker startup, PyTorch/DeepSpeed initialization, and model weight loading.
 
 ## Custom Input
 
