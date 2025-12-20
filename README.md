@@ -98,6 +98,8 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 | `query_protein_ligand_multiple.json` | 403s | 406s | -3s | **-1%** |
 
 > **Note**: CUDA 12.8 has ~5-8s faster container overhead. GPU inference time is **identical**. For long-running queries, the overhead difference is negligible (<3%).
+>
+> **Root Cause**: Nsight Systems profiling reveals that CUDA 13's `cuLibraryLoadData` function takes ~1.2s to load 46 GPU libraries, compared to near-instant loading on CUDA 12.8. This is inherent to CUDA 13's new lazy library loading mechanism and cannot be optimized at the application level.
 
 ### Cold Start vs Pre-warmed
 
