@@ -70,65 +70,50 @@ Total Queries Processed: 1
 
 Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119GB unified RAM).
 
-*Benchmark date: 2025-12-20 - Methodology: 4 interleaved rounds (CUDA 13 → 12.8 → 12.8 → 13) to account for thermal effects.*
+*Benchmark date: 2025-12-20*
+
+### CUDA 13.0 Performance (NGC 25.11)
+
+| Query | Total Time | Inference | Memory |
+|-------|------------|-----------|--------|
+| `query_ubiquitin.json` | 55s | 8s | 16 GB |
+| `query_homomer.json` | 51s | 8s | 16 GB |
+| `query_dna_ptm.json` | 47s | 6s | 15 GB |
+| `query_multimer.json` | 173s | 2m 0s | 26 GB |
+| `query_protein_ligand.json` | 228s | 3m 0s | 42 GB |
+| `query_protein_ligand_multiple.json` | 403s | 5m 55s | **54 GB** |
+
+> **Total Time** = Container startup + model loading + inference + cleanup  
+> **Memory** = Peak unified memory (119 GB available on DGX Spark)
 
 ### CUDA 13.0 vs CUDA 12.8 Comparison
 
+| Query | CUDA 13.0 | CUDA 12.8 | Diff | % |
+|-------|-----------|-----------|------|---|
+| `query_ubiquitin.json` | 55s | 49s | +6s | +12% |
+| `query_homomer.json` | 51s | 43s | +8s | +19% |
+| `query_dna_ptm.json` | 47s | 40s | +7s | +18% |
+| `query_multimer.json` | 173s | 168s | +5s | +3% |
+| `query_protein_ligand.json` | 228s | 223s | +5s | +2% |
+| `query_protein_ligand_multiple.json` | 403s | 406s | -3s | **-1%** |
+
+> **Note**: CUDA 12.8 has ~5-8s faster container overhead. GPU inference time is **identical**. For long-running queries, the overhead difference is negligible (<3%).
+
+### Cold Start vs Pre-warmed
+
+| Metric | Cold Start | Pre-warmed |
+|--------|------------|------------|
+| `evoformer_attn` compile | ~156s | ~0.5s |
+| Ubiquitin total | ~3m | 55s |
+
+### Software Versions
+
 | Component | CUDA 13.0 (NGC 25.11) | CUDA 12.8 (NGC 25.01) |
 |-----------|----------------------|----------------------|
-| **Base Image** | `nvcr.io/nvidia/pytorch:25.11-py3` | `nvcr.io/nvidia/pytorch:25.01-py3` |
-| **CUDA Version** | 13.0.88 | 12.8.61 |
-| **PyTorch Version** | 2.10.0a0 | 2.6.0a0 |
+| **CUDA** | 13.0.88 | 12.8.61 |
+| **PyTorch** | 2.10.0a0 | 2.6.0a0 |
 | **Triton** | 3.5.0 (native) | Nightly (cu128) |
 | **DeepSpeed** | 0.15.4 (patched) | 0.15.4 (patched) |
-
-### Cold Start vs Pre-warmed Performance
-
-| Metric | Cold Start | Pre-warmed Image |
-|--------|------------|------------------|
-| `evoformer_attn` JIT compile | ~156 seconds | ~0.5 seconds |
-| Ubiquitin inference | ~3 minutes | **8-9 seconds** |
-
-### Detailed Benchmark Comparison (Averaged)
-
-Total time = Docker startup + model loading + inference + cleanup:
-
-| Example | Description | CUDA 13.0 | CUDA 12.8 | Diff | % |
-|---------|-------------|-----------|-----------|------|---|
-| `query_ubiquitin.json` | Simple protein (76 residues) | 55s | 49s | +6s | +12% |
-| `query_homomer.json` | Protein homomer | 51s | 43s | +8s | +19% |
-| `query_dna_ptm.json` | DNA with modifications | 47s | 40s | +7s | +18% |
-| `query_multimer.json` | Protein multimer | 173s | 168s | +5s | +3% |
-| `query_protein_ligand.json` | Protein-ligand (MCL1) | 228s | 223s | +5s | +2% |
-| `query_protein_ligand_multiple.json` | Multiple protein-ligand | 403s | 406s | -3s | **-1%** |
-
-> **Note**: CUDA 13's overhead (container startup/PyTorch init) is ~5-8s slower than CUDA 12.8. GPU inference time is **identical**. For long-running queries, the overhead difference is negligible (<3%).
-
-**Inference time** (GPU computation only, identical for both):
-
-| Example | Inference Time |
-|---------|---------------|
-| `query_ubiquitin.json` | 8-9s |
-| `query_homomer.json` | 8s |
-| `query_dna_ptm.json` | 6-7s |
-| `query_multimer.json` | 2m 0s |
-| `query_protein_ligand.json` | 3m 0-5s |
-| `query_protein_ligand_multiple.json` | 5m 55s - 6m 8s |
-
-### Memory Usage (Peak System Memory)
-
-| Query | Peak Memory |
-|-------|-------------|
-| `query_ubiquitin.json` | ~16 GB |
-| `query_homomer.json` | ~16 GB |
-| `query_dna_ptm.json` | ~15 GB |
-| `query_multimer.json` | ~26 GB |
-| `query_protein_ligand.json` | ~42 GB |
-| `query_protein_ligand_multiple.json` | **~54 GB** |
-
-> DGX Spark has 119 GB unified memory shared between CPU/GPU. Maximum observed: 54 GB (45% utilization).
-
-> **Summary**: CUDA 12.8 shows ~5-8s faster container overhead compared to CUDA 13.0. Pure GPU inference time is identical between versions. For batch workloads where container startup is amortized, both perform equivalently.
 
 ## Custom Input
 
