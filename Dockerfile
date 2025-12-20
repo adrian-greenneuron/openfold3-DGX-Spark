@@ -65,10 +65,14 @@ WORKDIR /opt/openfold-3
 RUN pip install --no-deps -e .
 
 # -----------------------------------------------------------------------------
-# Triton Nightly (Required for sm_121)
+# Triton Configuration
 # -----------------------------------------------------------------------------
-# NGC container's Triton is too old for Blackwell. Install compatible nightly.
-RUN pip install --pre triton --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall
+# NGC 25.11+ includes Triton 3.5.0 with native CUDA 13 and Blackwell support.
+# Do NOT install Triton nightly here - it bundles CUDA 12.8 PTXAS which causes
+# significant performance regression on CUDA 13.
+#
+# For CUDA 12.8 (NGC 25.01), uncomment the following line:
+# RUN pip install --pre triton --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall
 
 # -----------------------------------------------------------------------------
 # Runtime Setup
