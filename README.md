@@ -115,6 +115,8 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 | **Triton** | 3.5.0 (native) | Nightly (cu128) |
 | **DeepSpeed** | 0.15.4 (patched) | 0.15.4 (patched) |
 
+> **Need CUDA 12.8?** The legacy version is available at the [`cuda-12.8` tag](https://github.com/adrian-greenneuron/openfold3-DGX-Spark/tree/cuda-12.8).
+
 ## Custom Input
 
 To run inference on your own proteins, create a JSON query file:
