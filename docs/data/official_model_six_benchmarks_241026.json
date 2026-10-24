@@ -1,0 +1,4017 @@
+{
+  "date": "2026-10-24",
+  "description": "All six original public benchmark cases. Original and official checkpoints differ; cached official uses the unchanged official model/settings.",
+  "warmups_per_condition": 1,
+  "timed_repeats_per_condition": 2,
+  "conditions": [
+    {
+      "id": "dna-cached",
+      "dataset": "dna",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "ee44434542b49175e8e62661a35a38b26a16421e78f7b1f6e42a610060559236",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 27.924044464016333,
+          "inference_seconds": 7.1695494710002095,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1639972864,
+          "peak_main_process_rss_bytes": 6969565184,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4606140416,
+          "sampled_system_nonavailable_peak_bytes": 20656435200,
+          "sampled_system_increase_peak_bytes": 16050294784,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 280,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.04931640625,
+            2.1337890625,
+            1.61181640625
+          ],
+          "end_loadavg": [
+            2.3994140625,
+            2.216796875,
+            1.65380859375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 23.360804786003428,
+          "inference_seconds": 4.2456929909822065,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1639972864,
+          "peak_main_process_rss_bytes": 7146049536,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5303877632,
+          "sampled_system_nonavailable_peak_bytes": 21226344448,
+          "sampled_system_increase_peak_bytes": 15922466816,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 234,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.3994140625,
+            2.216796875,
+            1.65380859375
+          ],
+          "end_loadavg": [
+            2.693359375,
+            2.30908203125,
+            1.70068359375
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 23.24791959900176,
+          "inference_seconds": 4.230256581999129,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1639972864,
+          "peak_main_process_rss_bytes": 7145525248,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 6181732352,
+          "sampled_system_nonavailable_peak_bytes": 21227905024,
+          "sampled_system_increase_peak_bytes": 15046172672,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 233,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.693359375,
+            2.30908203125,
+            1.70068359375
+          ],
+          "end_loadavg": [
+            2.75,
+            2.361328125,
+            1.734375
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 23.304362192502595,
+        "inference_seconds": 4.237974786490668,
+        "peak_cuda_allocated_bytes": 1610532352.0,
+        "peak_cuda_reserved_bytes": 1639972864.0,
+        "peak_main_process_rss_bytes": 7145787392.0,
+        "system_nonavailable_baseline_bytes": 5742804992.0,
+        "sampled_system_nonavailable_peak_bytes": 21227124736.0,
+        "sampled_system_increase_peak_bytes": 15484319744.0
+      }
+    },
+    {
+      "id": "dna-official",
+      "dataset": "dna",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "ee44434542b49175e8e62661a35a38b26a16421e78f7b1f6e42a610060559236",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 29.517635105003137,
+          "inference_seconds": 7.4222422360035125,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7237832704,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4373872640,
+          "sampled_system_nonavailable_peak_bytes": 20925394944,
+          "sampled_system_increase_peak_bytes": 16551522304,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 295,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.14501953125,
+            1.8779296875,
+            1.65771484375
+          ],
+          "end_loadavg": [
+            1.94775390625,
+            2.02587890625,
+            1.71484375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 23.604841429012595,
+          "inference_seconds": 4.344348682003329,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7146082304,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5390888960,
+          "sampled_system_nonavailable_peak_bytes": 20857589760,
+          "sampled_system_increase_peak_bytes": 15466700800,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 236,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.94775390625,
+            2.02587890625,
+            1.71484375
+          ],
+          "end_loadavg": [
+            2.44091796875,
+            2.14892578125,
+            1.76513671875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 24.72239971900126,
+          "inference_seconds": 4.374935364990961,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1610532352,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7146180608,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 6010220544,
+          "sampled_system_nonavailable_peak_bytes": 20934959104,
+          "sampled_system_increase_peak_bytes": 14924738560,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 247,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.44091796875,
+            2.14892578125,
+            1.76513671875
+          ],
+          "end_loadavg": [
+            2.1826171875,
+            2.10498046875,
+            1.76025390625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 24.163620574006927,
+        "inference_seconds": 4.359642023497145,
+        "peak_cuda_allocated_bytes": 1610532352.0,
+        "peak_cuda_reserved_bytes": 1635778560.0,
+        "peak_main_process_rss_bytes": 7146131456.0,
+        "system_nonavailable_baseline_bytes": 5700554752.0,
+        "sampled_system_nonavailable_peak_bytes": 20896274432.0,
+        "sampled_system_increase_peak_bytes": 15195719680.0
+      }
+    },
+    {
+      "id": "dna-original",
+      "dataset": "dna",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "ee44434542b49175e8e62661a35a38b26a16421e78f7b1f6e42a610060559236",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 48.95002500101691,
+          "inference_seconds": 6.445190410013311,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1600361472,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7018233856,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 6185308160,
+          "sampled_system_nonavailable_peak_bytes": 16649265152,
+          "sampled_system_increase_peak_bytes": 10463956992,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 488,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.75,
+            2.361328125,
+            1.734375
+          ],
+          "end_loadavg": [
+            2.0458984375,
+            2.21826171875,
+            1.7158203125
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 48.22991638799431,
+          "inference_seconds": 6.345409317000303,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1600361472,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7018266624,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4782583808,
+          "sampled_system_nonavailable_peak_bytes": 16622460928,
+          "sampled_system_increase_peak_bytes": 11839877120,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 481,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.0458984375,
+            2.21826171875,
+            1.7158203125
+          ],
+          "end_loadavg": [
+            1.87109375,
+            2.1376953125,
+            1.716796875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 47.93918287899578,
+          "inference_seconds": 6.361747863003984,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1600361472,
+          "peak_cuda_reserved_bytes": 1635778560,
+          "peak_main_process_rss_bytes": 7018205184,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4725325824,
+          "sampled_system_nonavailable_peak_bytes": 16456159232,
+          "sampled_system_increase_peak_bytes": 11730833408,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 478,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.87109375,
+            2.1376953125,
+            1.716796875
+          ],
+          "end_loadavg": [
+            1.51318359375,
+            1.9921875,
+            1.689453125
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 48.084549633495044,
+        "inference_seconds": 6.353578590002144,
+        "peak_cuda_allocated_bytes": 1600361472.0,
+        "peak_cuda_reserved_bytes": 1635778560.0,
+        "peak_main_process_rss_bytes": 7018235904.0,
+        "system_nonavailable_baseline_bytes": 4753954816.0,
+        "sampled_system_nonavailable_peak_bytes": 16539310080.0,
+        "sampled_system_increase_peak_bytes": 11785355264.0
+      }
+    },
+    {
+      "id": "homomer-cached",
+      "dataset": "homomer",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "e7785dbd2e2d96ac12917304752b3ec51459aa905306c5d59c6b716409c05e13",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 30.768317078996915,
+          "inference_seconds": 8.800603453011718,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1730150400,
+          "peak_main_process_rss_bytes": 8029786112,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4661157888,
+          "sampled_system_nonavailable_peak_bytes": 21706477568,
+          "sampled_system_increase_peak_bytes": 17045319680,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 308,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.41552734375,
+            1.314453125,
+            1.15478515625
+          ],
+          "end_loadavg": [
+            2.25244140625,
+            1.5498046875,
+            1.23974609375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 25.450281230994733,
+          "inference_seconds": 5.717911838000873,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1730150400,
+          "peak_main_process_rss_bytes": 7747051520,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5458976768,
+          "sampled_system_nonavailable_peak_bytes": 21781495808,
+          "sampled_system_increase_peak_bytes": 16322519040,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 255,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.25244140625,
+            1.5498046875,
+            1.23974609375
+          ],
+          "end_loadavg": [
+            2.95166015625,
+            1.7900390625,
+            1.32861328125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 25.288665101019433,
+          "inference_seconds": 5.66765649599256,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1730150400,
+          "peak_main_process_rss_bytes": 7913226240,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5448134656,
+          "sampled_system_nonavailable_peak_bytes": 21954400256,
+          "sampled_system_increase_peak_bytes": 16506265600,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 253,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.95166015625,
+            1.7900390625,
+            1.32861328125
+          ],
+          "end_loadavg": [
+            3.099609375,
+            1.9619140625,
+            1.4013671875
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 25.369473166007083,
+        "inference_seconds": 5.6927841669967165,
+        "peak_cuda_allocated_bytes": 1685127680.0,
+        "peak_cuda_reserved_bytes": 1730150400.0,
+        "peak_main_process_rss_bytes": 7830138880.0,
+        "system_nonavailable_baseline_bytes": 5453555712.0,
+        "sampled_system_nonavailable_peak_bytes": 21867948032.0,
+        "sampled_system_increase_peak_bytes": 16414392320.0
+      }
+    },
+    {
+      "id": "homomer-official",
+      "dataset": "homomer",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "e7785dbd2e2d96ac12917304752b3ec51459aa905306c5d59c6b716409c05e13",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 30.6045751979982,
+          "inference_seconds": 8.898427945008734,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1721761792,
+          "peak_main_process_rss_bytes": 7994437632,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4417171456,
+          "sampled_system_nonavailable_peak_bytes": 22153609216,
+          "sampled_system_increase_peak_bytes": 17736437760,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 306,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.982421875,
+            1.99267578125,
+            1.50439453125
+          ],
+          "end_loadavg": [
+            2.16357421875,
+            2.05224609375,
+            1.5400390625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 26.96874668300734,
+          "inference_seconds": 5.896390718000475,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1721761792,
+          "peak_main_process_rss_bytes": 7937396736,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5830914048,
+          "sampled_system_nonavailable_peak_bytes": 21629390848,
+          "sampled_system_increase_peak_bytes": 15798476800,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 270,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.16357421875,
+            2.05224609375,
+            1.5400390625
+          ],
+          "end_loadavg": [
+            2.3896484375,
+            2.125,
+            1.578125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 25.824964194005588,
+          "inference_seconds": 5.886212612007512,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685127680,
+          "peak_cuda_reserved_bytes": 1721761792,
+          "peak_main_process_rss_bytes": 7803936768,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5745987584,
+          "sampled_system_nonavailable_peak_bytes": 21722783744,
+          "sampled_system_increase_peak_bytes": 15976796160,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 258,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.3896484375,
+            2.125,
+            1.578125
+          ],
+          "end_loadavg": [
+            2.77587890625,
+            2.26611328125,
+            1.642578125
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 26.396855438506464,
+        "inference_seconds": 5.8913016650039935,
+        "peak_cuda_allocated_bytes": 1685127680.0,
+        "peak_cuda_reserved_bytes": 1721761792.0,
+        "peak_main_process_rss_bytes": 7870666752.0,
+        "system_nonavailable_baseline_bytes": 5788450816.0,
+        "sampled_system_nonavailable_peak_bytes": 21676087296.0,
+        "sampled_system_increase_peak_bytes": 15887636480.0
+      }
+    },
+    {
+      "id": "homomer-original",
+      "dataset": "homomer",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "e7785dbd2e2d96ac12917304752b3ec51459aa905306c5d59c6b716409c05e13",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 54.90961687199888,
+          "inference_seconds": 8.567006400990067,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685692416,
+          "peak_cuda_reserved_bytes": 1723858944,
+          "peak_main_process_rss_bytes": 7017967616,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5943341056,
+          "sampled_system_nonavailable_peak_bytes": 17034821632,
+          "sampled_system_increase_peak_bytes": 11091480576,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 548,
+          "prediction_files": 15,
+          "start_loadavg": [
+            3.099609375,
+            1.9619140625,
+            1.4013671875
+          ],
+          "end_loadavg": [
+            2.14013671875,
+            1.87646484375,
+            1.40234375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 49.45969974398031,
+          "inference_seconds": 7.875730913016014,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685692416,
+          "peak_cuda_reserved_bytes": 1723858944,
+          "peak_main_process_rss_bytes": 7018471424,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4724899840,
+          "sampled_system_nonavailable_peak_bytes": 16849051648,
+          "sampled_system_increase_peak_bytes": 12124151808,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 494,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.14013671875,
+            1.87646484375,
+            1.40234375
+          ],
+          "end_loadavg": [
+            2.4892578125,
+            2.0048828125,
+            1.46875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 49.72161527298158,
+          "inference_seconds": 7.799098375020549,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1685692416,
+          "peak_cuda_reserved_bytes": 1723858944,
+          "peak_main_process_rss_bytes": 7018278912,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4388335616,
+          "sampled_system_nonavailable_peak_bytes": 16978247680,
+          "sampled_system_increase_peak_bytes": 12589912064,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 496,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.4892578125,
+            2.0048828125,
+            1.46875
+          ],
+          "end_loadavg": [
+            2.5791015625,
+            2.09716796875,
+            1.52685546875
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 49.590657508480945,
+        "inference_seconds": 7.837414644018281,
+        "peak_cuda_allocated_bytes": 1685692416.0,
+        "peak_cuda_reserved_bytes": 1723858944.0,
+        "peak_main_process_rss_bytes": 7018375168.0,
+        "system_nonavailable_baseline_bytes": 4556617728.0,
+        "sampled_system_nonavailable_peak_bytes": 16913649664.0,
+        "sampled_system_increase_peak_bytes": 12357031936.0
+      }
+    },
+    {
+      "id": "mcl1-cached",
+      "dataset": "mcl1",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 247.74451325897826,
+          "inference_seconds": 222.87728237599367,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7889031168,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4188205056,
+          "sampled_system_nonavailable_peak_bytes": 43719073792,
+          "sampled_system_increase_peak_bytes": 39530868736,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2467,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.29150390625,
+            0.80029296875,
+            0.88037109375
+          ],
+          "end_loadavg": [
+            1.61962890625,
+            1.25537109375,
+            1.0654296875
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 242.74261562299216,
+          "inference_seconds": 218.67112995201023,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7940538368,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4816134144,
+          "sampled_system_nonavailable_peak_bytes": 43808882688,
+          "sampled_system_increase_peak_bytes": 38992748544,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2406,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.61962890625,
+            1.25537109375,
+            1.0654296875
+          ],
+          "end_loadavg": [
+            1.13916015625,
+            1.15966796875,
+            1.0654296875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 242.64662665099604,
+          "inference_seconds": 219.3915579690074,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7975612416,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4421947392,
+          "sampled_system_nonavailable_peak_bytes": 43880751104,
+          "sampled_system_increase_peak_bytes": 39458803712,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2416,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.13916015625,
+            1.15966796875,
+            1.0654296875
+          ],
+          "end_loadavg": [
+            1.12841796875,
+            1.17431640625,
+            1.09228515625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 242.6946211369941,
+        "inference_seconds": 219.03134396050882,
+        "peak_cuda_allocated_bytes": 22219897856.0,
+        "peak_cuda_reserved_bytes": 23358078976.0,
+        "peak_main_process_rss_bytes": 7958075392.0,
+        "system_nonavailable_baseline_bytes": 4619040768.0,
+        "sampled_system_nonavailable_peak_bytes": 43844816896.0,
+        "sampled_system_increase_peak_bytes": 39225776128.0
+      }
+    },
+    {
+      "id": "mcl1-multiple-cached",
+      "dataset": "mcl1-multiple",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "79e956865053f8eee6507dcb9901461c0e663c5f4c4fd42f297e0010e3bc22de",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 463.4515579479921,
+          "inference_seconds": 438.3368729169888,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 8056524800,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4466884608,
+          "sampled_system_nonavailable_peak_bytes": 44626530304,
+          "sampled_system_increase_peak_bytes": 40159645696,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4605,
+          "prediction_files": 30,
+          "start_loadavg": [
+            0.87353515625,
+            1.2548828125,
+            1.470703125
+          ],
+          "end_loadavg": [
+            1.09228515625,
+            1.17529296875,
+            1.35400390625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 459.3414742029854,
+          "inference_seconds": 435.21994690198335,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7976411136,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4762464256,
+          "sampled_system_nonavailable_peak_bytes": 44622950400,
+          "sampled_system_increase_peak_bytes": 39860486144,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4563,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.09228515625,
+            1.17529296875,
+            1.35400390625
+          ],
+          "end_loadavg": [
+            1.26123046875,
+            1.306640625,
+            1.3642578125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 458.70682504598517,
+          "inference_seconds": 435.65112691000104,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7980462080,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4883148800,
+          "sampled_system_nonavailable_peak_bytes": 44668366848,
+          "sampled_system_increase_peak_bytes": 39785218048,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4564,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.26123046875,
+            1.306640625,
+            1.3642578125
+          ],
+          "end_loadavg": [
+            1.48974609375,
+            1.26904296875,
+            1.302734375
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 459.0241496244853,
+        "inference_seconds": 435.4355369059922,
+        "peak_cuda_allocated_bytes": 22219897856.0,
+        "peak_cuda_reserved_bytes": 23358078976.0,
+        "peak_main_process_rss_bytes": 7978436608.0,
+        "system_nonavailable_baseline_bytes": 4822806528.0,
+        "sampled_system_nonavailable_peak_bytes": 44645658624.0,
+        "sampled_system_increase_peak_bytes": 39822852096.0
+      }
+    },
+    {
+      "id": "mcl1-multiple-official",
+      "dataset": "mcl1-multiple",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "79e956865053f8eee6507dcb9901461c0e663c5f4c4fd42f297e0010e3bc22de",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 523.70851632001,
+          "inference_seconds": 498.2616350330063,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7917756416,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4259536896,
+          "sampled_system_nonavailable_peak_bytes": 44511113216,
+          "sampled_system_increase_peak_bytes": 40251576320,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 5209,
+          "prediction_files": 30,
+          "start_loadavg": [
+            0.982421875,
+            1.09814453125,
+            1.16259765625
+          ],
+          "end_loadavg": [
+            1.02783203125,
+            1.07373046875,
+            1.12841796875
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 521.940822288976,
+          "inference_seconds": 498.1926856809878,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7978438656,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4526477312,
+          "sampled_system_nonavailable_peak_bytes": 44604248064,
+          "sampled_system_increase_peak_bytes": 40077770752,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 5190,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.02783203125,
+            1.07373046875,
+            1.12841796875
+          ],
+          "end_loadavg": [
+            1.703125,
+            1.22216796875,
+            1.14501953125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 518.8273231000057,
+          "inference_seconds": 494.46725527301896,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7978835968,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4638892032,
+          "sampled_system_nonavailable_peak_bytes": 44605378560,
+          "sampled_system_increase_peak_bytes": 39966486528,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 5163,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.703125,
+            1.22216796875,
+            1.14501953125
+          ],
+          "end_loadavg": [
+            1.33544921875,
+            1.529296875,
+            1.3896484375
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 520.3840726944909,
+        "inference_seconds": 496.32997047700337,
+        "peak_cuda_allocated_bytes": 22219897856.0,
+        "peak_cuda_reserved_bytes": 23358078976.0,
+        "peak_main_process_rss_bytes": 7978637312.0,
+        "system_nonavailable_baseline_bytes": 4582684672.0,
+        "sampled_system_nonavailable_peak_bytes": 44604813312.0,
+        "sampled_system_increase_peak_bytes": 40022128640.0
+      }
+    },
+    {
+      "id": "mcl1-multiple-original",
+      "dataset": "mcl1-multiple",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "79e956865053f8eee6507dcb9901461c0e663c5f4c4fd42f297e0010e3bc22de",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 412.3301475550106,
+          "inference_seconds": 366.4386593680247,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7164477440,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4767571968,
+          "sampled_system_nonavailable_peak_bytes": 44106530816,
+          "sampled_system_increase_peak_bytes": 39338958848,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4102,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.48974609375,
+            1.26904296875,
+            1.302734375
+          ],
+          "end_loadavg": [
+            1.2294921875,
+            1.19775390625,
+            1.255859375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 411.08321825499297,
+          "inference_seconds": 365.9742586789944,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7110074368,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4292313088,
+          "sampled_system_nonavailable_peak_bytes": 43880755200,
+          "sampled_system_increase_peak_bytes": 39588442112,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4073,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.2294921875,
+            1.19775390625,
+            1.255859375
+          ],
+          "end_loadavg": [
+            1.1015625,
+            1.14599609375,
+            1.21630859375
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 412.0228906030243,
+          "inference_seconds": 365.84607223499916,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7110213632,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4266708992,
+          "sampled_system_nonavailable_peak_bytes": 43971919872,
+          "sampled_system_increase_peak_bytes": 39705210880,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 4084,
+          "prediction_files": 30,
+          "start_loadavg": [
+            1.1015625,
+            1.14599609375,
+            1.21630859375
+          ],
+          "end_loadavg": [
+            1.22412109375,
+            1.1435546875,
+            1.1787109375
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 411.5530544290086,
+        "inference_seconds": 365.91016545699676,
+        "peak_cuda_allocated_bytes": 24980105216.0,
+        "peak_cuda_reserved_bytes": 26210205696.0,
+        "peak_main_process_rss_bytes": 7110144000.0,
+        "system_nonavailable_baseline_bytes": 4279511040.0,
+        "sampled_system_nonavailable_peak_bytes": 43926337536.0,
+        "sampled_system_increase_peak_bytes": 39646826496.0
+      }
+    },
+    {
+      "id": "mcl1-official",
+      "dataset": "mcl1",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+      "reused": true,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 280.197584257985,
+          "inference_seconds": 255.7354301730229,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 8022540288,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4263399424,
+          "sampled_system_nonavailable_peak_bytes": 43649986560,
+          "sampled_system_increase_peak_bytes": 39386587136,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2789,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.08984375,
+            1.1455078125,
+            1.0107421875
+          ],
+          "end_loadavg": [
+            1.40087890625,
+            1.251953125,
+            1.1005859375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 273.658682623005,
+          "inference_seconds": 250.55714471099782,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7957299200,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5029351424,
+          "sampled_system_nonavailable_peak_bytes": 43695759360,
+          "sampled_system_increase_peak_bytes": 38666407936,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2723,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.40087890625,
+            1.251953125,
+            1.1005859375
+          ],
+          "end_loadavg": [
+            1.15283203125,
+            1.267578125,
+            1.16259765625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 272.9932772780012,
+          "inference_seconds": 249.18856535601662,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7975845888,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4848959488,
+          "sampled_system_nonavailable_peak_bytes": 43886239744,
+          "sampled_system_increase_peak_bytes": 39037280256,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2715,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.15283203125,
+            1.267578125,
+            1.16259765625
+          ],
+          "end_loadavg": [
+            1.2255859375,
+            1.2802734375,
+            1.19970703125
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 273.3259799505031,
+        "inference_seconds": 249.87285503350722,
+        "peak_cuda_allocated_bytes": 22219897856.0,
+        "peak_cuda_reserved_bytes": 23358078976.0,
+        "peak_main_process_rss_bytes": 7966572544.0,
+        "system_nonavailable_baseline_bytes": 4939155456.0,
+        "sampled_system_nonavailable_peak_bytes": 43790999552.0,
+        "sampled_system_increase_peak_bytes": 38851844096.0
+      }
+    },
+    {
+      "id": "mcl1-original",
+      "dataset": "mcl1",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+      "reused": true,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 230.5727294360113,
+          "inference_seconds": 185.2327607970219,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7165214720,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5621018624,
+          "sampled_system_nonavailable_peak_bytes": 42256224256,
+          "sampled_system_increase_peak_bytes": 36635205632,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2294,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.83056640625,
+            1.4658203125,
+            0.87255859375
+          ],
+          "end_loadavg": [
+            1.25830078125,
+            1.46240234375,
+            1.01708984375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 230.94059513497632,
+          "inference_seconds": 184.70821725501446,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7109627904,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5260529664,
+          "sampled_system_nonavailable_peak_bytes": 42258436096,
+          "sampled_system_increase_peak_bytes": 36997906432,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2290,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.25830078125,
+            1.46240234375,
+            1.01708984375
+          ],
+          "end_loadavg": [
+            1.087890625,
+            1.24267578125,
+            1.01220703125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 230.77065543000936,
+          "inference_seconds": 185.54154235401074,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7110615040,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4189069312,
+          "sampled_system_nonavailable_peak_bytes": 42252001280,
+          "sampled_system_increase_peak_bytes": 38062931968,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2290,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.087890625,
+            1.24267578125,
+            1.01220703125
+          ],
+          "end_loadavg": [
+            1.2412109375,
+            1.1767578125,
+            1.01806640625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 230.85562528249284,
+        "inference_seconds": 185.1248798045126,
+        "peak_cuda_allocated_bytes": 24980105216.0,
+        "peak_cuda_reserved_bytes": 26210205696.0,
+        "peak_main_process_rss_bytes": 7110121472.0,
+        "system_nonavailable_baseline_bytes": 4724799488.0,
+        "sampled_system_nonavailable_peak_bytes": 42255218688.0,
+        "sampled_system_increase_peak_bytes": 37530419200.0
+      }
+    },
+    {
+      "id": "multimer-cached",
+      "dataset": "multimer",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "3e4a4e3f94bf7f1a04f41ad6ab2c78dbd77eab329ca9baf76bd1f54d1a621c0e",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 155.32673826100654,
+          "inference_seconds": 129.39987122500315,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 8070426624,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4523692032,
+          "sampled_system_nonavailable_peak_bytes": 36654051328,
+          "sampled_system_increase_peak_bytes": 32130359296,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1541,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.6923828125,
+            1.99951171875,
+            1.73193359375
+          ],
+          "end_loadavg": [
+            1.31103515625,
+            1.78857421875,
+            1.69921875
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 150.04506108898204,
+          "inference_seconds": 126.91715449598269,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 7980359680,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4728287232,
+          "sampled_system_nonavailable_peak_bytes": 36605898752,
+          "sampled_system_increase_peak_bytes": 31877611520,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1494,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.31103515625,
+            1.78857421875,
+            1.69921875
+          ],
+          "end_loadavg": [
+            1.9921875,
+            1.9501953125,
+            1.7802734375
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 149.81209888099693,
+          "inference_seconds": 126.10343040901353,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 7979143168,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4472627200,
+          "sampled_system_nonavailable_peak_bytes": 36653613056,
+          "sampled_system_increase_peak_bytes": 32180985856,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1492,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.9921875,
+            1.9501953125,
+            1.7802734375
+          ],
+          "end_loadavg": [
+            2.10498046875,
+            2.0048828125,
+            1.8310546875
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 149.92857998498948,
+        "inference_seconds": 126.5102924524981,
+        "peak_cuda_allocated_bytes": 15591069184.0,
+        "peak_cuda_reserved_bytes": 16313745408.0,
+        "peak_main_process_rss_bytes": 7979751424.0,
+        "system_nonavailable_baseline_bytes": 4600457216.0,
+        "sampled_system_nonavailable_peak_bytes": 36629755904.0,
+        "sampled_system_increase_peak_bytes": 32029298688.0
+      }
+    },
+    {
+      "id": "multimer-official",
+      "dataset": "multimer",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "3e4a4e3f94bf7f1a04f41ad6ab2c78dbd77eab329ca9baf76bd1f54d1a621c0e",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 176.0471732300066,
+          "inference_seconds": 150.0452030680026,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 7935758336,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4423655424,
+          "sampled_system_nonavailable_peak_bytes": 36595953664,
+          "sampled_system_increase_peak_bytes": 32172298240,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1753,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.14990234375,
+            1.46875,
+            1.6416015625
+          ],
+          "end_loadavg": [
+            1.21484375,
+            1.38623046875,
+            1.58056640625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 171.6233597410028,
+          "inference_seconds": 146.67384661498363,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 7878873088,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4652158976,
+          "sampled_system_nonavailable_peak_bytes": 36658343936,
+          "sampled_system_increase_peak_bytes": 32006184960,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1702,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.21484375,
+            1.38623046875,
+            1.58056640625
+          ],
+          "end_loadavg": [
+            1.0654296875,
+            1.31005859375,
+            1.52197265625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 174.5485059179773,
+          "inference_seconds": 149.40554636501474,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 15591069184,
+          "peak_cuda_reserved_bytes": 16313745408,
+          "peak_main_process_rss_bytes": 7913418752,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4892786688,
+          "sampled_system_nonavailable_peak_bytes": 36611194880,
+          "sampled_system_increase_peak_bytes": 31718408192,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1732,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.0654296875,
+            1.31005859375,
+            1.52197265625
+          ],
+          "end_loadavg": [
+            1.13427734375,
+            1.326171875,
+            1.49853515625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 173.08593282949005,
+        "inference_seconds": 148.0396964899992,
+        "peak_cuda_allocated_bytes": 15591069184.0,
+        "peak_cuda_reserved_bytes": 16313745408.0,
+        "peak_main_process_rss_bytes": 7896145920.0,
+        "system_nonavailable_baseline_bytes": 4772472832.0,
+        "sampled_system_nonavailable_peak_bytes": 36634769408.0,
+        "sampled_system_increase_peak_bytes": 31862296576.0
+      }
+    },
+    {
+      "id": "multimer-original",
+      "dataset": "multimer",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "3e4a4e3f94bf7f1a04f41ad6ab2c78dbd77eab329ca9baf76bd1f54d1a621c0e",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 170.4533396390034,
+          "inference_seconds": 122.93144282497815,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 17353043456,
+          "peak_cuda_reserved_bytes": 18182307840,
+          "peak_main_process_rss_bytes": 7758422016,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4745117696,
+          "sampled_system_nonavailable_peak_bytes": 34581262336,
+          "sampled_system_increase_peak_bytes": 29836144640,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1696,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.10498046875,
+            2.0048828125,
+            1.8310546875
+          ],
+          "end_loadavg": [
+            1.4404296875,
+            1.80810546875,
+            1.79296875
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 169.46177663802519,
+          "inference_seconds": 122.80183877400123,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 17353043456,
+          "peak_cuda_reserved_bytes": 18182307840,
+          "peak_main_process_rss_bytes": 7703793664,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4193910784,
+          "sampled_system_nonavailable_peak_bytes": 34543861760,
+          "sampled_system_increase_peak_bytes": 30349950976,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1683,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.4404296875,
+            1.80810546875,
+            1.79296875
+          ],
+          "end_loadavg": [
+            1.20849609375,
+            1.53857421875,
+            1.68994140625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 169.4159155160014,
+          "inference_seconds": 122.58902579700225,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 17353043456,
+          "peak_cuda_reserved_bytes": 18182307840,
+          "peak_main_process_rss_bytes": 7703236608,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4420677632,
+          "sampled_system_nonavailable_peak_bytes": 34573320192,
+          "sampled_system_increase_peak_bytes": 30152642560,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 1687,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.20849609375,
+            1.53857421875,
+            1.68994140625
+          ],
+          "end_loadavg": [
+            1.322265625,
+            1.52001953125,
+            1.66259765625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 169.4388460770133,
+        "inference_seconds": 122.69543228550174,
+        "peak_cuda_allocated_bytes": 17353043456.0,
+        "peak_cuda_reserved_bytes": 18182307840.0,
+        "peak_main_process_rss_bytes": 7703515136.0,
+        "system_nonavailable_baseline_bytes": 4307294208.0,
+        "sampled_system_nonavailable_peak_bytes": 34558590976.0,
+        "sampled_system_increase_peak_bytes": 30251296768.0
+      }
+    },
+    {
+      "id": "ubiquitin-cached",
+      "dataset": "ubiquitin",
+      "model": "cached",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+      "reused": false,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 31.61248665500898,
+          "inference_seconds": 9.10698917202535,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2015363072,
+          "peak_main_process_rss_bytes": 8035586048,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4177580032,
+          "sampled_system_nonavailable_peak_bytes": 22821613568,
+          "sampled_system_increase_peak_bytes": 18644033536,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 316,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.56005859375,
+            1.00537109375,
+            1.0380859375
+          ],
+          "end_loadavg": [
+            1.61376953125,
+            1.2490234375,
+            1.119140625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 27.008288714976516,
+          "inference_seconds": 6.103447411005618,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2015363072,
+          "peak_main_process_rss_bytes": 7791861760,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4876550144,
+          "sampled_system_nonavailable_peak_bytes": 22309249024,
+          "sampled_system_increase_peak_bytes": 17432698880,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 270,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.61376953125,
+            1.2490234375,
+            1.119140625
+          ],
+          "end_loadavg": [
+            1.63134765625,
+            1.27734375,
+            1.13134765625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 26.072133704001317,
+          "inference_seconds": 6.060195561993169,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2015363072,
+          "peak_main_process_rss_bytes": 7959146496,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5616971776,
+          "sampled_system_nonavailable_peak_bytes": 22693990400,
+          "sampled_system_increase_peak_bytes": 17077018624,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 261,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.63134765625,
+            1.27734375,
+            1.13134765625
+          ],
+          "end_loadavg": [
+            1.97607421875,
+            1.396484375,
+            1.17529296875
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 26.540211209488916,
+        "inference_seconds": 6.081821486499393,
+        "peak_cuda_allocated_bytes": 1994707968.0,
+        "peak_cuda_reserved_bytes": 2015363072.0,
+        "peak_main_process_rss_bytes": 7875504128.0,
+        "system_nonavailable_baseline_bytes": 5246760960.0,
+        "sampled_system_nonavailable_peak_bytes": 22501619712.0,
+        "sampled_system_increase_peak_bytes": 17254858752.0
+      }
+    },
+    {
+      "id": "ubiquitin-official",
+      "dataset": "ubiquitin",
+      "model": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+      "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+      "reused": true,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 32.37024287501117,
+          "inference_seconds": 9.392475866974564,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 8040558592,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4516462592,
+          "sampled_system_nonavailable_peak_bytes": 22695563264,
+          "sampled_system_increase_peak_bytes": 18179100672,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 324,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.9072265625,
+            0.859375,
+            0.63134765625
+          ],
+          "end_loadavg": [
+            2.60107421875,
+            1.18359375,
+            0.7509765625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 26.534900486003608,
+          "inference_seconds": 6.248043438012246,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 7959638016,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4877307904,
+          "sampled_system_nonavailable_peak_bytes": 22861697024,
+          "sampled_system_increase_peak_bytes": 17984389120,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 266,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.60107421875,
+            1.18359375,
+            0.7509765625
+          ],
+          "end_loadavg": [
+            2.31494140625,
+            1.23291015625,
+            0.77978515625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 27.482907199009787,
+          "inference_seconds": 6.3160465260152705,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 7825596416,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5757177856,
+          "sampled_system_nonavailable_peak_bytes": 22711324672,
+          "sampled_system_increase_peak_bytes": 16954146816,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 275,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.31494140625,
+            1.23291015625,
+            0.77978515625
+          ],
+          "end_loadavg": [
+            2.8154296875,
+            1.439453125,
+            0.86083984375
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 27.008903842506697,
+        "inference_seconds": 6.282044982013758,
+        "peak_cuda_allocated_bytes": 1994707968.0,
+        "peak_cuda_reserved_bytes": 2009071616.0,
+        "peak_main_process_rss_bytes": 7892617216.0,
+        "system_nonavailable_baseline_bytes": 5317242880.0,
+        "sampled_system_nonavailable_peak_bytes": 22786510848.0,
+        "sampled_system_increase_peak_bytes": 17469267968.0
+      }
+    },
+    {
+      "id": "ubiquitin-original",
+      "dataset": "ubiquitin",
+      "model": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+      "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+      "reused": true,
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 51.26296381800785,
+          "inference_seconds": 8.23028147299192,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018082304,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4181794816,
+          "sampled_system_nonavailable_peak_bytes": 17908002816,
+          "sampled_system_increase_peak_bytes": 13726208000,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 511,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.07373046875,
+            0.08984375,
+            0.38427734375
+          ],
+          "end_loadavg": [
+            0.79443359375,
+            0.279296875,
+            0.4345703125
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 50.16419433799456,
+          "inference_seconds": 8.172037272976013,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018213376,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4391149568,
+          "sampled_system_nonavailable_peak_bytes": 17805643776,
+          "sampled_system_increase_peak_bytes": 13414494208,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 500,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.79443359375,
+            0.279296875,
+            0.4345703125
+          ],
+          "end_loadavg": [
+            1.52392578125,
+            0.5498046875,
+            0.51904296875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 50.478426257992396,
+          "inference_seconds": 8.128633384010755,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018663936,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4291706880,
+          "sampled_system_nonavailable_peak_bytes": 18098982912,
+          "sampled_system_increase_peak_bytes": 13807276032,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 504,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.52392578125,
+            0.5498046875,
+            0.51904296875
+          ],
+          "end_loadavg": [
+            1.82421875,
+            0.76416015625,
+            0.5947265625
+          ]
+        }
+      ],
+      "medians": {
+        "wall_seconds": 50.32131029799348,
+        "inference_seconds": 8.150335328493384,
+        "peak_cuda_allocated_bytes": 1907443712.0,
+        "peak_cuda_reserved_bytes": 1927282688.0,
+        "peak_main_process_rss_bytes": 7018438656.0,
+        "system_nonavailable_baseline_bytes": 4341428224.0,
+        "sampled_system_nonavailable_peak_bytes": 17952313344.0,
+        "sampled_system_increase_peak_bytes": 13610885120.0
+      }
+    }
+  ],
+  "cache_audits": [
+    {
+      "dataset": "dna",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "dna",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "dna",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 2,
+      "conditioning_hits": 398,
+      "bias_hits": 9552,
+      "norm_hits": 398,
+      "exact_checks": 52,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 2,
+      "conditioning_hits": 398,
+      "bias_hits": 9552,
+      "norm_hits": 398,
+      "exact_checks": 52,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 2,
+      "conditioning_hits": 398,
+      "bias_hits": 9552,
+      "norm_hits": 398,
+      "exact_checks": 52,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "ubiquitin",
+      "replicate": 0,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "ubiquitin",
+      "replicate": 1,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    },
+    {
+      "dataset": "ubiquitin",
+      "replicate": 2,
+      "mechanism": "rollout-scoped invariant conditioning and bias cache",
+      "precision_or_model_settings_changed": false,
+      "rollouts": 1,
+      "conditioning_hits": 199,
+      "bias_hits": 4776,
+      "norm_hits": 199,
+      "exact_checks": 26,
+      "max_bias_entries": 24,
+      "max_norm_entries": 1
+    }
+  ],
+  "cached_vs_official_byte_comparisons": [
+    {
+      "dataset": "ubiquitin",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences.json": {
+          "left": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9",
+          "right": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6",
+          "right": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_model.cif": {
+          "left": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4",
+          "right": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences.json": {
+          "left": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9",
+          "right": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e",
+          "right": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_model.cif": {
+          "left": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f",
+          "right": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences.json": {
+          "left": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1",
+          "right": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e",
+          "right": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_model.cif": {
+          "left": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a",
+          "right": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences.json": {
+          "left": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9",
+          "right": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe",
+          "right": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_model.cif": {
+          "left": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09",
+          "right": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences.json": {
+          "left": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16",
+          "right": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160",
+          "right": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_model.cif": {
+          "left": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f",
+          "right": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f"
+        }
+      }
+    },
+    {
+      "dataset": "ubiquitin",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences.json": {
+          "left": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9",
+          "right": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6",
+          "right": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_model.cif": {
+          "left": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4",
+          "right": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences.json": {
+          "left": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9",
+          "right": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e",
+          "right": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_model.cif": {
+          "left": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f",
+          "right": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences.json": {
+          "left": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1",
+          "right": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e",
+          "right": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_model.cif": {
+          "left": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a",
+          "right": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences.json": {
+          "left": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9",
+          "right": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe",
+          "right": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_model.cif": {
+          "left": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09",
+          "right": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences.json": {
+          "left": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16",
+          "right": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160",
+          "right": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_model.cif": {
+          "left": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f",
+          "right": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f"
+        }
+      }
+    },
+    {
+      "dataset": "ubiquitin",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences.json": {
+          "left": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9",
+          "right": "bb1cde98f6e7424fdfff1314ab40c404bad0e87e05fd1704860aacb756d511b9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6",
+          "right": "d4fec425212d6bbc5e0bd381ee170493c0e1b318869b42d6c7e5385c7e2589a6"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_model.cif": {
+          "left": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4",
+          "right": "499a4ccda437a042d9499e8e513b3b34ae9f76c3bc1b8716750cc1c54a5849d4"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences.json": {
+          "left": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9",
+          "right": "d5ae815254c38b238926a2c1fc54e1608552b3fd26f730cb2959b0386e2d9bc9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e",
+          "right": "1ab328e421f88401b8b36f79a00f2452fa4754542f7be186fd6a8931b7ff0a3e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_model.cif": {
+          "left": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f",
+          "right": "906ea1a2c4fa6b5e5328f66e58187d446f2cc145fa245f274d1e15c4ba295f1f"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences.json": {
+          "left": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1",
+          "right": "80f709545e65c1c453ad4703d074ae74394f84fb17393ed7d6074e4f57c1d7e1"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e",
+          "right": "57d5016726184330aa09805fd331665444d76fb27f31ffabe073200126f8146e"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_model.cif": {
+          "left": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a",
+          "right": "63191d944211fccd1f5eb4d2bb959833668a36866baff43afcc1cd29ad5f180a"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences.json": {
+          "left": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9",
+          "right": "863992c672fb8673217aaae20715835c4664d580ffc29135689921b6002e60d9"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe",
+          "right": "41889991447e01c6c5a76cc8cf3350c5da9b2ce60634794d6f8044a8f43f4ffe"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_model.cif": {
+          "left": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09",
+          "right": "3c31496063fc33cf387b0e621776a828a319c6ed118d04600fe69d6d1571fb09"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences.json": {
+          "left": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16",
+          "right": "f5733a57ce6949de56778a3c95c8fa864bf423ff344e3010650e9ac3c6790c16"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160",
+          "right": "2fcb7682d791a1a7eca323b3b3ab8bdca1b96c4a1e419bc02032fa386f777160"
+        },
+        "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_model.cif": {
+          "left": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f",
+          "right": "ba64943a455aa664c70a919de05cf71bfa1a29640379ce99ec0a26e48a5eea2f"
+        }
+      }
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences.json": {
+          "left": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5",
+          "right": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900",
+          "right": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_model.cif": {
+          "left": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033",
+          "right": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences.json": {
+          "left": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668",
+          "right": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3",
+          "right": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_model.cif": {
+          "left": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70",
+          "right": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences.json": {
+          "left": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898",
+          "right": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb",
+          "right": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_model.cif": {
+          "left": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e",
+          "right": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences.json": {
+          "left": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114",
+          "right": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd",
+          "right": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_model.cif": {
+          "left": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d",
+          "right": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences.json": {
+          "left": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267",
+          "right": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4",
+          "right": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_model.cif": {
+          "left": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de",
+          "right": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de"
+        }
+      }
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences.json": {
+          "left": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5",
+          "right": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900",
+          "right": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_model.cif": {
+          "left": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033",
+          "right": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences.json": {
+          "left": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668",
+          "right": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3",
+          "right": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_model.cif": {
+          "left": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70",
+          "right": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences.json": {
+          "left": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898",
+          "right": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb",
+          "right": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_model.cif": {
+          "left": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e",
+          "right": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences.json": {
+          "left": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114",
+          "right": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd",
+          "right": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_model.cif": {
+          "left": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d",
+          "right": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences.json": {
+          "left": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267",
+          "right": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4",
+          "right": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_model.cif": {
+          "left": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de",
+          "right": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de"
+        }
+      }
+    },
+    {
+      "dataset": "homomer",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences.json": {
+          "left": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5",
+          "right": "e282b9330b3d592f05231f17a3d70398717a0713936216f8aaa4d209d6ab7ba5"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900",
+          "right": "97d76318770d041253c3a1f1eac67eb0127f85af235faa010b6c29a2a5088900"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_1_model.cif": {
+          "left": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033",
+          "right": "c73b6973b77e394d7297ea3eb79f2a0d532787909e96eb4b9c5b6d61182e0033"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences.json": {
+          "left": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668",
+          "right": "cac4d62dddc9cac11c39718a8af66d471462fd6b3c1209458a289a88c94ec668"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3",
+          "right": "0f934b8c6b1922f16ba5be8e675d33a295b1f9328e2269e1449bc7eaaefd5ee3"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_2_model.cif": {
+          "left": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70",
+          "right": "d753235efe4c4febd279bc015993406ec84b32afbe0241f178caea2c3ed93c70"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences.json": {
+          "left": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898",
+          "right": "af8f7f324ef1176203a55dfdd567670213a67cee4110a4ccb4989da736e3d898"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb",
+          "right": "1ac8573293c8dca7a3bbb714cb0e255ec86d4317c5b462f1f879863ac420ecdb"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_3_model.cif": {
+          "left": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e",
+          "right": "c315ba6fd5b376b80c0c6a22673707e45eeb4a17bb82e07e2b9539a20e8a8f2e"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences.json": {
+          "left": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114",
+          "right": "4284dcf5adf2d323e0d8f3d45a1c50a1e1e5796a74839bc711ebb3c71c875114"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd",
+          "right": "22c2e9130ab424ee06ea2ab71794afc4deba113796764b0b4b57ee1099c9b2fd"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_4_model.cif": {
+          "left": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d",
+          "right": "af73777f79d375d5ed7241d7caeee217fb0a12121e156d2b34a0b324ecb8c62d"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences.json": {
+          "left": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267",
+          "right": "b4d965fb7b8bb97c01c0876e89bec4418f16417bd8963ee6ec0b13fedf049267"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4",
+          "right": "09fc42250570e58bd8c35afd3f9085d4a0f45f73f3606ffc4a5ac15ea99c82d4"
+        },
+        "leucine_zipper/seed_42/leucine_zipper_seed_42_sample_5_model.cif": {
+          "left": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de",
+          "right": "b2f13d1b9bf0e1f586c06cecad118fc7e6cb509fb11c51dd1e384a57c7c533de"
+        }
+      }
+    },
+    {
+      "dataset": "dna",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences.json": {
+          "left": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345",
+          "right": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d",
+          "right": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_model.cif": {
+          "left": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd",
+          "right": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences.json": {
+          "left": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5",
+          "right": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8",
+          "right": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_model.cif": {
+          "left": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9",
+          "right": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences.json": {
+          "left": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b",
+          "right": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450",
+          "right": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_model.cif": {
+          "left": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a",
+          "right": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences.json": {
+          "left": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd",
+          "right": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d",
+          "right": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_model.cif": {
+          "left": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e",
+          "right": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences.json": {
+          "left": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d",
+          "right": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448",
+          "right": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_model.cif": {
+          "left": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060",
+          "right": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060"
+        }
+      }
+    },
+    {
+      "dataset": "dna",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences.json": {
+          "left": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345",
+          "right": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d",
+          "right": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_model.cif": {
+          "left": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd",
+          "right": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences.json": {
+          "left": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5",
+          "right": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8",
+          "right": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_model.cif": {
+          "left": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9",
+          "right": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences.json": {
+          "left": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b",
+          "right": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450",
+          "right": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_model.cif": {
+          "left": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a",
+          "right": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences.json": {
+          "left": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd",
+          "right": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d",
+          "right": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_model.cif": {
+          "left": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e",
+          "right": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences.json": {
+          "left": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d",
+          "right": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448",
+          "right": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_model.cif": {
+          "left": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060",
+          "right": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060"
+        }
+      }
+    },
+    {
+      "dataset": "dna",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences.json": {
+          "left": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345",
+          "right": "4d1e99861e7b72351e2a24029cf97de4124372e49cd0af2a6d972a6f528f6345"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d",
+          "right": "f63ee7e595902ec3b0b9dd87d49c74f90a2e8ecdf4545d3999a461ca6836c21d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_1_model.cif": {
+          "left": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd",
+          "right": "c6aa40b7e97ca3490a48d6ae5058f358d76b3a455afa66d11a34d8cf8a04b8fd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences.json": {
+          "left": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5",
+          "right": "ddbd1c48e8a96c780ab41a5a6d3a3882e79183d5e9a8332ecfa9d99621049ca5"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8",
+          "right": "623e840bc7055c7af83e3df479d6f58d70e0122b90280cd20fda57d73ecfa6b8"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_2_model.cif": {
+          "left": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9",
+          "right": "d458e0fa0f7a2be9b7cd49371cc1b1bc65a9352ef067442d2bec23be3f2179c9"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences.json": {
+          "left": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b",
+          "right": "787e3d6d2bd9873da5877c7ae525766bf740e9c0bfba9a04e4ea981387f2b54b"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450",
+          "right": "5b6ab037843c363ea9860ba95ee3197c542d545b6d08fd5906050048e0b68450"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_3_model.cif": {
+          "left": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a",
+          "right": "c54c516ef58ef1da0d4c0cc6ad9ff26c3acad4fdb6550d5e9847ee2ea2725e3a"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences.json": {
+          "left": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd",
+          "right": "fb4c93a5da50ba333096483a0317e6b251fd8afd6ff43c28d2623b623155fbcd"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d",
+          "right": "43594373baf7011f39c065634a9386210844d29cfc2fdd82fa744264ce75c18d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_4_model.cif": {
+          "left": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e",
+          "right": "1b938457b5f40ffe766116cf8720a348c9368fff734f301d63b47e168886279e"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences.json": {
+          "left": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d",
+          "right": "12c7ee684811ca2ea7e416e34683329c6c2dd38c7777c3a6eea81c09b15a7e2d"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448",
+          "right": "b32eab7614db3f08c4b1a48268deffda562331acf08113bff5ef38d307891448"
+        },
+        "ptm-DNA/seed_42/ptm-DNA_seed_42_sample_5_model.cif": {
+          "left": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060",
+          "right": "4ce92eaa0649cad653154b4a30fd61a5a4f6b3b41e063f5cc3eb95a232069060"
+        }
+      }
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences.json": {
+          "left": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a",
+          "right": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d",
+          "right": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_model.cif": {
+          "left": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22",
+          "right": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences.json": {
+          "left": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875",
+          "right": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc",
+          "right": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_model.cif": {
+          "left": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e",
+          "right": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences.json": {
+          "left": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b",
+          "right": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d",
+          "right": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_model.cif": {
+          "left": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0",
+          "right": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences.json": {
+          "left": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5",
+          "right": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566",
+          "right": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_model.cif": {
+          "left": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25",
+          "right": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences.json": {
+          "left": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225",
+          "right": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4",
+          "right": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_model.cif": {
+          "left": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e",
+          "right": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e"
+        }
+      }
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences.json": {
+          "left": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a",
+          "right": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d",
+          "right": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_model.cif": {
+          "left": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22",
+          "right": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences.json": {
+          "left": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875",
+          "right": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc",
+          "right": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_model.cif": {
+          "left": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e",
+          "right": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences.json": {
+          "left": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b",
+          "right": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d",
+          "right": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_model.cif": {
+          "left": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0",
+          "right": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences.json": {
+          "left": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5",
+          "right": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566",
+          "right": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_model.cif": {
+          "left": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25",
+          "right": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences.json": {
+          "left": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225",
+          "right": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4",
+          "right": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_model.cif": {
+          "left": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e",
+          "right": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e"
+        }
+      }
+    },
+    {
+      "dataset": "multimer",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences.json": {
+          "left": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a",
+          "right": "9e830ad7cc58d1b7bd46698aada95ed653ab849057dbe1c2ba3fa3ced6b3278a"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d",
+          "right": "a22d0bd4848bce79fc67bac4429061a739f9631d3238bb0d9bf9f3242e32013d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_1_model.cif": {
+          "left": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22",
+          "right": "8bff1c0948961be5f11291dbfacf8b02f7b59c60fb5f7901007e5f821fe19a22"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences.json": {
+          "left": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875",
+          "right": "7c5c471a73f843a5ddf22b47b905e6c7e884a78a37a4c42df42a6bd7cd3bd875"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc",
+          "right": "ca5798cd1c3e7a1116d94e04744cc9d934e1fb11d4dc6a3a40b8b7395114bacc"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_2_model.cif": {
+          "left": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e",
+          "right": "15efc3d6a04b5b75b2a34bcbd93874d6309d33e8a5d261d145c099623643589e"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences.json": {
+          "left": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b",
+          "right": "1c9edd80aa5c433d99d43c19d1a4dd8b542a63f9445e7e1111200302d357400b"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d",
+          "right": "b47ff430549634bcf61cf6c8e686f3db3f14c44ab89b8bdee5c8f5b59ce0c35d"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_3_model.cif": {
+          "left": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0",
+          "right": "20dc15f6e4bd92b4bf5ffa7b4ea95ed563c2c64bcdf4e8d525c3f28596d502e0"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences.json": {
+          "left": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5",
+          "right": "b967605ad9e25dece7b542b5735d0deae438eefd22e4737c6bc7ca928139fff5"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566",
+          "right": "5ca042d1e4ba1ae8ace29fc2a085cb236762c97fae1a1a12954b22a179581566"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_4_model.cif": {
+          "left": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25",
+          "right": "92ee1a784c66699f338f466c7f47225b4feb07a265b2e4f6aa099efda4dffa25"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences.json": {
+          "left": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225",
+          "right": "9bbf26aae22d7f0fe9b0a878af3d4678fc6e82f2da8538ba62930adcc1615225"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4",
+          "right": "bc1fb9a0dd10a4e91abf7caea9154b6f20fc5897606a3ccd9c25923d7cc365d4"
+        },
+        "7cnx/seed_42/7cnx_seed_42_sample_5_model.cif": {
+          "left": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e",
+          "right": "10fe6b188762f258e18bef375a78bd3830080ac99433f6801f8038302a85890e"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 15,
+      "sha256": {
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1/seed_42/mcl1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 0,
+      "identical": true,
+      "prediction_files": 30,
+      "sha256": {
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences.json": {
+          "left": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436",
+          "right": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075",
+          "right": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_model.cif": {
+          "left": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437",
+          "right": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences.json": {
+          "left": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59",
+          "right": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd",
+          "right": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_model.cif": {
+          "left": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a",
+          "right": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences.json": {
+          "left": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d",
+          "right": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7",
+          "right": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_model.cif": {
+          "left": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c",
+          "right": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences.json": {
+          "left": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461",
+          "right": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608",
+          "right": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_model.cif": {
+          "left": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f",
+          "right": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences.json": {
+          "left": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20",
+          "right": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e",
+          "right": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_model.cif": {
+          "left": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14",
+          "right": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 1,
+      "identical": true,
+      "prediction_files": 30,
+      "sha256": {
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences.json": {
+          "left": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436",
+          "right": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075",
+          "right": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_model.cif": {
+          "left": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437",
+          "right": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences.json": {
+          "left": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59",
+          "right": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd",
+          "right": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_model.cif": {
+          "left": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a",
+          "right": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences.json": {
+          "left": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d",
+          "right": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7",
+          "right": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_model.cif": {
+          "left": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c",
+          "right": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences.json": {
+          "left": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461",
+          "right": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608",
+          "right": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_model.cif": {
+          "left": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f",
+          "right": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences.json": {
+          "left": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20",
+          "right": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e",
+          "right": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_model.cif": {
+          "left": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14",
+          "right": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14"
+        }
+      }
+    },
+    {
+      "dataset": "mcl1-multiple",
+      "replicate": 2,
+      "identical": true,
+      "prediction_files": 30,
+      "sha256": {
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences.json": {
+          "left": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b",
+          "right": "fab0ec33674455b6cf178b78fe38f18f01aaeb5460f1ac679cf2421e73b39d8b"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48",
+          "right": "b7786cf8a32784a2916fe3fac8cf70131cd09148ab912cb9349612c6171f4d48"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_1_model.cif": {
+          "left": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28",
+          "right": "66130a0ff3c993d2e921259070778b4c789ad438fb05659f0c94b0e91feb9d28"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences.json": {
+          "left": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9",
+          "right": "7c2face5efde49d56cc6334a7385a5c08c8aee3e9f1405ecd26863055b1666e9"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794",
+          "right": "72509216500360cf04b12de866aa6effe7e7b09151778e9c776c71b52a950794"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_2_model.cif": {
+          "left": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0",
+          "right": "b9ded920e3ba207e91e0085f7153d74322056ed35e86a93bac74d61ebfa21ea0"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences.json": {
+          "left": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c",
+          "right": "72a6d1a5c3ccc461722beff188bdd3e5015fcc02b59bdd8daec2a72610a0321c"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd",
+          "right": "362f478cb43c4744f682712b5e7803485953f9a563320d7f88ba3af173199cdd"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_3_model.cif": {
+          "left": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d",
+          "right": "6d0d19d2af8b3a236767d0a4a45ace5664454ca721035ed97627090b78588d0d"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences.json": {
+          "left": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90",
+          "right": "748105f8d0f72cb123a60aa234715737f3f2197627ff2b0c37734a82ae47eb90"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6",
+          "right": "930ea734bca83758d71c7d071cd474ca20100620ac13fbdfdc294678b8c644b6"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_4_model.cif": {
+          "left": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f",
+          "right": "3cd55b3bb8f5e6b56f78440ece09e3d09e833e0308bf798dec6c4b1f4670652f"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences.json": {
+          "left": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef",
+          "right": "8c78a49d9e988acd1cdd1340897883a1e5ccdcff7ceb6850cebdb55eb24277ef"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351",
+          "right": "8f808ded65fab16ec32872e701aec1e0a34939adf9a53570196e75d4c650a351"
+        },
+        "mcl1_lig1/seed_42/mcl1_lig1_seed_42_sample_5_model.cif": {
+          "left": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2",
+          "right": "b23076a4182d3385d3b7892df893bc8037719b77ccdc80e49ed88d95362f22e2"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences.json": {
+          "left": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436",
+          "right": "35b6c89bfc3446269ffd094ef09e2f145ad6719c9bf958657a10ddfa3cd48436"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_confidences_aggregated.json": {
+          "left": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075",
+          "right": "3162b64fc8e435ab45f9465a3ff349d5c99d31a30146723b4179fdf0c4a92075"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_1_model.cif": {
+          "left": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437",
+          "right": "074c858bc960906cc1db0d83b4637cbc93d0bed540c1ab34a29b752a3847a437"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences.json": {
+          "left": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59",
+          "right": "5197b216d8538fbb363fea8a11e4bd06bd279b71a457ec042df685fb43359c59"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_confidences_aggregated.json": {
+          "left": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd",
+          "right": "4dd0a7c602d5a227a2ab969e25db2a4e492a3f78b0499bed6d22550c08adf3fd"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_2_model.cif": {
+          "left": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a",
+          "right": "48118186c90797c2997718a00fbcc8451b6d0b951c28a9891cd71f8a5343ac2a"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences.json": {
+          "left": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d",
+          "right": "4fc21bafecb121114b0e49ed6e43c667936d6227fb6f5255d30595f58fc9e25d"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_confidences_aggregated.json": {
+          "left": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7",
+          "right": "2dcbd3e31e415315b5820550cce617435ed282ea4ec44d2489def767b5a601b7"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_3_model.cif": {
+          "left": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c",
+          "right": "4bfc81af791ce0132322c3ff049c06b2d1d667d5be098b16e54409987d37fd0c"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences.json": {
+          "left": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461",
+          "right": "4aa5589def45736abe25a785b576462b877fd75a7172c7a7acbef824ecd67461"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_confidences_aggregated.json": {
+          "left": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608",
+          "right": "280ad3617cfa9911cf6975144097136554298b3eb90d15a2cfefbdc97a910608"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_4_model.cif": {
+          "left": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f",
+          "right": "7d0061f6225f582c1500f6dfda37ba78fb4a5d2e96522b4bcab1a1cbb484c39f"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences.json": {
+          "left": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20",
+          "right": "2e3759097d6f32f5da5d89f3415f73385627239a40c22f9f1a4e9208945f0d20"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_confidences_aggregated.json": {
+          "left": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e",
+          "right": "f22bf4f2e103fe943edfdf046754fecefbfceee4a47dcdcf4527f2c8e1dd020e"
+        },
+        "mcl1_lig2/seed_42/mcl1_lig2_seed_42_sample_5_model.cif": {
+          "left": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14",
+          "right": "31377655a825e60318a903b5fe5fbf93291bfa6136713103b8b35e74e9947d14"
+        }
+      }
+    }
+  ],
+  "validated_runs": 54,
+  "validated_prediction_files": 945,
+  "model_configurations_identical_official_and_cached": true,
+  "tools_at_run_sha256": {
+    "compare_predictions.py": "2ac422cf6830f11f691f3ddbf324b21bb0eb3d2a2944172d1df4abd9535a5426",
+    "measure_compiled_inference.py": "b22f96aafc3a01f713da7a375546016767da4a9c1b62b31cf87085c4658f6c1e",
+    "profile_inference.py": "e6c2152ac16e50ebbbbe6b3de6bb8fca11845b0feabc373c73a3e348db9991f2",
+    "run_model_benchmarks.py": "b738fcbce32f33772035c87e8fc5e2ac3340afe2c86047f1ae442674afae1008",
+    "deterministic_inference.py": "7b87d2271ea34fc04217d0ed0753cfc3328c55d39085e155fb7504c375c49bb2",
+    "measure_cached_inference.py": "c72dca4f57ffef95ebda2a6c2b2930f32f983d1135625af5a012c8eda979e7f0",
+    "benchmark_resources.py": "98e063fb42407658f53ddc1e25fec3b65e487cce689e54d53dbf64ecd225c0b8",
+    "compiled_attention.py": "f7c9ed732d0e958360c61ca18cdb965b003e242987976e76e4ded538ff53dc40",
+    "measure_inference.py": "2e160575eab4ef811dd83d243d16377dab12ed53d3cd22625bb38d7d8afd170a",
+    "cached_diffusion.py": "3e62da7c1649b14de171c0930fb0733a5c4bd74919d35fa29bf695bfc716dbd3"
+  },
+  "prior_protocol": {
+    "purpose": "Original preview model versus current official model: different checkpoints and algorithms; not a software regression or accuracy comparison.",
+    "warmups": 1,
+    "timed_repeats": 2,
+    "system_sampling_interval_seconds": 0.1,
+    "timing_boundary": "New Python process, including imports, CUDA initialisation, model loading and prediction; excluding container creation, setup, validation and warmup.",
+    "primary_memory": "PyTorch peak CUDA allocated/reserved bytes over the complete child CLI; main-process RSS reported separately; never summed.",
+    "system_memory": "Sampled MemTotal minus MemAvailable; whole-system footprint and increase above pre-run baseline, not isolated process memory.",
+    "settings": {
+      "PYTHONHASHSEED": "0",
+      "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+      "OMP_NUM_THREADS": "16",
+      "use_templates": false,
+      "use_msa_server": false,
+      "seed": 42,
+      "normal_model_defaults": true
+    },
+    "versions": {
+      "original": {
+        "image": "openfold3-spark:cuda13-fixed",
+        "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+        "source": "d8afcd3485388d28b2dfd949a202672720693668",
+        "checkpoint_sha256": "aedd8f3eb814e3926c8974ef34c9499df224443f173b7e396c97684da6e3eeb6"
+      },
+      "official": {
+        "image": "openfold3-modern-current-241026:upstream",
+        "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+        "source": "a83cb119f58a86306f9d66ca528ef2a0fffad250",
+        "checkpoint_sha256": "bd43301c011d5f87580d3e8b548658869433e4488399feb03035ba248f8e29e4"
+      }
+    },
+    "instrumentation_sha256": {
+      "measure_inference.py": "2e160575eab4ef811dd83d243d16377dab12ed53d3cd22625bb38d7d8afd170a",
+      "benchmark_resources.py": "e7dfc0fed14a7b6604195ee5a212c25dae0fead88900860fbb4850febef7e422",
+      "compare_predictions.py": "2ac422cf6830f11f691f3ddbf324b21bb0eb3d2a2944172d1df4abd9535a5426"
+    }
+  },
+  "profiles": [
+    {
+      "version": "original",
+      "exit_code": 0,
+      "total_seconds": 233.741106313013,
+      "profile": {
+        "_attention": {
+          "calls": 1203,
+          "cuda_stream_elapsed_seconds": 4.546198656260967,
+          "host_call_seconds": 0.12955533180502243,
+          "first_call_stream_seconds": 0.04293267059326172,
+          "remaining_stream_seconds": 4.5032659856677055,
+          "shapes": {
+            "((1, 162, 4, 32, 32), 'torch.float32', (663552, 4096, 32, 128, 1))": 3,
+            "((1, 5, 162, 4, 32, 32), 'torch.float32', (3317760, 663552, 4096, 32, 128, 1))": 1200
+          }
+        },
+        "input_embedder": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 1.4794791259765625,
+          "host_call_seconds": 1.4636204849812202,
+          "first_call_stream_seconds": 1.4794791259765625,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "_deepspeed_evo_attn": {
+          "calls": 7909,
+          "cuda_stream_elapsed_seconds": 19.846640546977522,
+          "host_call_seconds": 21.530603684019297,
+          "first_call_stream_seconds": 0.49180853271484376,
+          "remaining_stream_seconds": 19.354832014262676,
+          "shapes": {
+            "((516, 4, 737, 16), 'torch.float32', (47168, 16, 64, 1))": 8,
+            "((221, 4, 737, 16), 'torch.float32', (47168, 16, 64, 1))": 8,
+            "((129, 4, 737, 16), 'torch.float32', (47168, 16, 64, 1))": 320,
+            "((92, 4, 737, 16), 'torch.float32', (47168, 16, 64, 1))": 64,
+            "((516, 4, 737, 32), 'torch.float32', (94336, 32, 128, 1))": 4,
+            "((221, 4, 737, 32), 'torch.float32', (94336, 32, 128, 1))": 4,
+            "((129, 4, 737, 32), 'torch.float32', (94336, 32, 128, 1))": 2080,
+            "((92, 4, 737, 32), 'torch.float32', (94336, 32, 128, 1))": 416,
+            "((1, 1, 16, 737, 24), 'torch.float32', (283008, 283008, 24, 384, 1))": 193,
+            "((1, 5, 16, 737, 48), 'torch.float32', (2830080, 566016, 48, 768, 1))": 4800,
+            "((5, 737, 4, 737, 32), 'torch.float32', (69525632, 94336, 32, 128, 1))": 8,
+            "((5, 1, 16, 737, 24), 'torch.float32', (283008, 283008, 24, 384, 1))": 4
+          }
+        },
+        "template_embedder": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 9.329512939453124,
+          "host_call_seconds": 9.827655006054556,
+          "first_call_stream_seconds": 4.28856884765625,
+          "remaining_stream_seconds": 5.0409440917968755,
+          "shapes": {}
+        },
+        "msa_module": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 8.47158251953125,
+          "host_call_seconds": 4.884861566009931,
+          "first_call_stream_seconds": 2.553888916015625,
+          "remaining_stream_seconds": 5.917693603515625,
+          "shapes": {}
+        },
+        "pairformer_stack": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 71.26046875,
+          "host_call_seconds": 71.84540853701765,
+          "first_call_stream_seconds": 18.06723046875,
+          "remaining_stream_seconds": 53.193238281250004,
+          "shapes": {}
+        },
+        "run_trunk": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 90.743015625,
+          "host_call_seconds": 90.00406901101815,
+          "first_call_stream_seconds": 90.743015625,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "sample_diffusion": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 84.8567890625,
+          "host_call_seconds": 85.55870440401486,
+          "first_call_stream_seconds": 84.8567890625,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "aux_heads": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 7.50002294921875,
+          "host_call_seconds": 7.48394508898491,
+          "first_call_stream_seconds": 7.50002294921875,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "_rollout": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 92.3568984375,
+          "host_call_seconds": 93.04312410499551,
+          "first_call_stream_seconds": 92.3568984375,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        }
+      }
+    },
+    {
+      "version": "official",
+      "exit_code": 0,
+      "total_seconds": 299.8247052769875,
+      "profile": {
+        "_attention": {
+          "calls": 6200,
+          "cuda_stream_elapsed_seconds": 91.69848986715078,
+          "host_call_seconds": 3.014231278473744,
+          "first_call_stream_seconds": 0.010392160415649413,
+          "remaining_stream_seconds": 91.68809770673514,
+          "shapes": {
+            "((1, 162, 4, 32, 32), 'torch.float32', (663552, 4096, 32, 128, 1))": 3,
+            "((1, 16, 737, 24), 'torch.float32', (283008, 24, 384, 1))": 193,
+            "((1, 5, 162, 4, 32, 32), 'torch.float32', (3317760, 663552, 4096, 32, 128, 1))": 1200,
+            "((1, 5, 16, 737, 48), 'torch.float32', (2830080, 566016, 48, 768, 1))": 4800,
+            "((5, 16, 737, 24), 'torch.float32', (283008, 24, 384, 1))": 4
+          }
+        },
+        "input_embedder": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 0.5064334106445313,
+          "host_call_seconds": 0.49041801699786447,
+          "first_call_stream_seconds": 0.5064334106445313,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "_triton_evo_attn": {
+          "calls": 500,
+          "cuda_stream_elapsed_seconds": 11.343100390434266,
+          "host_call_seconds": 2.9858521389833186,
+          "first_call_stream_seconds": 0.17630137634277343,
+          "remaining_stream_seconds": 11.166799014091492,
+          "shapes": {
+            "((737, 4, 737, 16), 'torch.float32', (47168, 16, 64, 1))": 72,
+            "((737, 4, 737, 32), 'torch.float32', (94336, 32, 128, 1))": 420,
+            "((5, 737, 4, 737, 32), 'torch.float32', (69525632, 94336, 32, 128, 1))": 8
+          }
+        },
+        "template_embedder": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 13.374602905273438,
+          "host_call_seconds": 14.314107029000297,
+          "first_call_stream_seconds": 8.8342099609375,
+          "remaining_stream_seconds": 4.540392944335938,
+          "shapes": {}
+        },
+        "msa_module": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 8.707921875,
+          "host_call_seconds": 1.168903217971092,
+          "first_call_stream_seconds": 2.88929736328125,
+          "remaining_stream_seconds": 5.81862451171875,
+          "shapes": {}
+        },
+        "pairformer_stack": {
+          "calls": 4,
+          "cuda_stream_elapsed_seconds": 68.974853515625,
+          "host_call_seconds": 68.82750874498743,
+          "first_call_stream_seconds": 17.46994921875,
+          "remaining_stream_seconds": 51.504904296875,
+          "shapes": {}
+        },
+        "run_trunk": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 91.6730703125,
+          "host_call_seconds": 90.23967831698246,
+          "first_call_stream_seconds": 91.6730703125,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "sample_diffusion": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 154.577859375,
+          "host_call_seconds": 155.69857833298738,
+          "first_call_stream_seconds": 154.577859375,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "aux_heads": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 7.40290576171875,
+          "host_call_seconds": 7.661640158999944,
+          "first_call_stream_seconds": 7.40290576171875,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        },
+        "_rollout": {
+          "calls": 1,
+          "cuda_stream_elapsed_seconds": 161.980859375,
+          "host_call_seconds": 163.3606874550169,
+          "first_call_stream_seconds": 161.980859375,
+          "remaining_stream_seconds": 0,
+          "shapes": {}
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Models/weights differ between original and official. Model-agreement checks do not measure biological accuracy.",
+    "Two timed repeats, fixed order and one seed; small differences may be noise.",
+    "Stage profiles include instrumentation/first-use overhead; CUDA-event intervals include stream-idle gaps and are not isolated kernel busy time.",
+    "System memory is sampled MemTotal minus MemAvailable, includes background processes and is not isolated model memory.",
+    "The cache is qualified for the pinned official source and ordinary inference only, not training or every future model/version."
+  ]
+}

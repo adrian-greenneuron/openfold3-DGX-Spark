@@ -107,6 +107,10 @@ Upstream emitted a warning that its Triton Evoformer kernel uses an untuned conf
 
 The official image's logical size was about **9.08 GB**, with approximately **2.29 GB** of model weights kept separately, versus **22.95 GB** for the retained image. These are logical sizes, not additional physical Docker storage or space freed; all images remain present.
 
+## Output-preserving official-model optimisation
+
+The subsequent [six-example study](official_model_performance_241026.md) identifies diffusion as the main MCL1 slowdown and tests rollout-scoped reuse of invariant calculations. On the three larger cases, the opt-in cache reduces official CLI time by **11.2–13.4%**, with unchanged measured peak CUDA allocation. All cached outputs match the official baseline byte for byte on the tested six inputs. It remains a separate candidate; the original default is unchanged.
+
 ## Recommendation
 
 Keep the original working default for now. The original-model candidate is a practical way to remove the local DeepSpeed patch and `docker commit` while preserving the established model. The current official route is the more maintainable longer-term option, but it changes the model and needs scientific evaluation before replacing established results.

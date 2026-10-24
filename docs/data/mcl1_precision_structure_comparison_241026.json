@@ -1,0 +1,237 @@
+{
+  "purpose": "Retrospective structural comparison, not an accuracy test or precision-only ablation.",
+  "same_checkpoint": "of3_ft3_v1.pt",
+  "same_input_query": true,
+  "limitations": [
+    "FP32 verification also enables deterministic operations and a deterministic cuBLAS workspace; differences cannot be attributed solely to BF16 versus FP32.",
+    "Seed-42 sample indices are paired; the four equivalent protein chains are assigned by minimum whole-complex C-alpha RMSD.",
+    "Each RMSD uses rigid superposition; ligands and side chains are excluded. No experimental accuracy is measured."
+  ],
+  "samples": [
+    {
+      "sample": "mcl1_seed_42_sample_1_model.cif",
+      "bf16_fast_vs_fp32_verification": {
+        "complex_ca_rmsd_angstrom": 8.95700752463801,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.46860567877450715,
+          0.3941965200550466,
+          0.4297001310190665,
+          0.4253170486611945
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_repeat_difference": {
+        "complex_ca_rmsd_angstrom": 1.488239196234525,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.12930461187920864,
+          0.0944756296442423,
+          0.08732372052473078,
+          0.11943040260757821
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_confidence": {
+        "avg_plddt": 41.06036376953125,
+        "ptm": 0.4658314883708954,
+        "iptm": 0.34203848242759705
+      },
+      "fp32_verification_confidence": {
+        "avg_plddt": 39.01975631713867,
+        "ptm": 0.49825525283813477,
+        "iptm": 0.3859274387359619
+      }
+    },
+    {
+      "sample": "mcl1_seed_42_sample_2_model.cif",
+      "bf16_fast_vs_fp32_verification": {
+        "complex_ca_rmsd_angstrom": 0.030199420776552344,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.027214428198858297,
+          0.022452616629839914,
+          0.020332166346181388,
+          0.021949072748220697
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_repeat_difference": {
+        "complex_ca_rmsd_angstrom": 0.026140221450436613,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.017335391242751526,
+          0.01835841877914758,
+          0.017094133214180292,
+          0.017246111449921477
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_confidence": {
+        "avg_plddt": 41.47905349731445,
+        "ptm": 0.5441802740097046,
+        "iptm": 0.44242140650749207
+      },
+      "fp32_verification_confidence": {
+        "avg_plddt": 41.5107536315918,
+        "ptm": 0.5456276535987854,
+        "iptm": 0.44429391622543335
+      }
+    },
+    {
+      "sample": "mcl1_seed_42_sample_3_model.cif",
+      "bf16_fast_vs_fp32_verification": {
+        "complex_ca_rmsd_angstrom": 0.3138215857077264,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.026382673546307474,
+          0.02603226555694102,
+          0.02169858369424712,
+          0.026007558197541084
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_repeat_difference": {
+        "complex_ca_rmsd_angstrom": 10.062297959960167,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.1962974976419339,
+          0.35283553057829936,
+          0.4471775600771259,
+          0.18531303110117908
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_confidence": {
+        "avg_plddt": 42.49514389038086,
+        "ptm": 0.5241862535476685,
+        "iptm": 0.4151407480239868
+      },
+      "fp32_verification_confidence": {
+        "avg_plddt": 42.652774810791016,
+        "ptm": 0.5269030332565308,
+        "iptm": 0.41849198937416077
+      }
+    },
+    {
+      "sample": "mcl1_seed_42_sample_4_model.cif",
+      "bf16_fast_vs_fp32_verification": {
+        "complex_ca_rmsd_angstrom": 3.1516018752748454,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.18843041771410113,
+          0.14884704207495858,
+          0.16168983801130482,
+          0.15172877394615739
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_repeat_difference": {
+        "complex_ca_rmsd_angstrom": 0.023275170565028137,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.017632537389919316,
+          0.016711963993321095,
+          0.017564437187209996,
+          0.016079031858675093
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_confidence": {
+        "avg_plddt": 38.44953918457031,
+        "ptm": 0.4771783947944641,
+        "iptm": 0.357452929019928
+      },
+      "fp32_verification_confidence": {
+        "avg_plddt": 37.47346878051758,
+        "ptm": 0.47230958938598633,
+        "iptm": 0.350943386554718
+      }
+    },
+    {
+      "sample": "mcl1_seed_42_sample_5_model.cif",
+      "bf16_fast_vs_fp32_verification": {
+        "complex_ca_rmsd_angstrom": 0.7344071629514772,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.36521794866541407,
+          0.3585161924842098,
+          0.3671153747142143,
+          0.35605106057882424
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_repeat_difference": {
+        "complex_ca_rmsd_angstrom": 0.20330954320046526,
+        "separately_aligned_chain_ca_rmsd_angstrom": [
+          0.20433366354509272,
+          0.20085051367234855,
+          0.1956579446184375,
+          0.18960219576031168
+        ],
+        "ca_atoms_compared": 632,
+        "best_homomer_chain_assignment": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        }
+      },
+      "bf16_fast_confidence": {
+        "avg_plddt": 42.20534896850586,
+        "ptm": 0.493110328912735,
+        "iptm": 0.38017481565475464
+      },
+      "fp32_verification_confidence": {
+        "avg_plddt": 41.3282356262207,
+        "ptm": 0.5079445242881775,
+        "iptm": 0.39762189984321594
+      }
+    }
+  ]
+}

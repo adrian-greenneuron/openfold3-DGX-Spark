@@ -2,6 +2,8 @@
 
 24 October 2026
 
+Extended results: the [six-example investigation](official_model_performance_241026.md) includes all original benchmark inputs and an opt-in, output-preserving cache. The measurements below remain the original two-example comparison.
+
 The current official model was faster on ubiquitin, but slower on the MCL1 complex. Its CUDA tensor peak was lower on MCL1, while sampled whole-system memory was slightly higher. There is no consistent winner across these two examples.
 
 **These models use different weights.** This comparison measures the complete model/runtime combinations. It does not establish prediction accuracy or isolate the effect of a software upgrade. The [same-model modernisation comparison](modernisation_241026.md#matched-speed-comparison) remains separate. The original working default is unchanged.

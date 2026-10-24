@@ -27,6 +27,9 @@ def main():
     parser.add_argument("--warmups", type=int, default=1)
     parser.add_argument("--repeats", type=int, default=2)
     parser.add_argument("--interval", type=float, default=0.1)
+    parser.add_argument("--inference-wrapper", type=Path,
+                        default=Path(__file__).with_name("measure_inference.py"),
+                        help="Optional measurement entry point; normal inference is the default")
     args = parser.parse_args()
     if args.warmups < 0 or args.repeats < 1 or args.interval <= 0:
         parser.error("Require warmups >= 0, repeats >= 1 and interval > 0")
@@ -49,7 +52,7 @@ def main():
                 errors.append(str(exc))
 
         monitor = threading.Thread(target=sample, daemon=True)
-        command = [sys.executable, str(Path(__file__).with_name("measure_inference.py")),
+        command = [sys.executable, str(args.inference_wrapper),
                    f"--metrics={dest}/resource_metrics.json", "predict",
                    f"--query_json={args.query_json}", f"--output_dir={dest}",
                    "--use_templates=false", "--use_msa_server=false"]

@@ -6,6 +6,9 @@ This repository provides a specialized Docker deployment for running **OpenFold3
 
 The [separate original-versus-official model benchmark](docs/official_model_benchmark_241026.md) reports speed and peak memory: the official model was 1.86× faster on ubiquitin but 18.4% slower on the MCL1 complex. These models use different weights; the results do not establish their relative prediction accuracy.
 
+The [full six-example investigation](docs/official_model_performance_241026.md) adds an opt-in cache for the pinned official model: **11.2–13.4% lower runtime on the larger cases**, unchanged measured peak CUDA allocation, and byte-identical tested outputs. This does not change the original working default.
+
+
 This build solves specific compatibility issues ("Dependency Hell") encountered on the Blackwell platform, including:
 - **Triton Compatibility**: NGC 25.11 includes native Triton 3.5.0 with `sm_121` (Blackwell) support.
 - **DeepSpeed Fixes**: Patches DeepSpeed JIT compilation to correctly parse `sm_121` architecture flags (mapping to `sm_120` for NVCC compatibility).
