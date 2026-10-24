@@ -12,9 +12,11 @@ This build solves specific compatibility issues ("Dependency Hell") encountered 
 
 ### 1. Build the Docker Image
 
-Use the provided `build.sh` script, which performs the build with GPU access to pre-compile CUDA kernels:
+Clone this repository, then use `build.sh` to build the image and pre-compile CUDA kernels with GPU access:
 
 ```bash
+git clone https://github.com/adrian-greenneuron/openfold3-DGX-Spark.git
+cd openfold3-DGX-Spark
 ./build.sh
 ```
 
@@ -23,7 +25,17 @@ This script:
 2. Runs inference with GPU access to trigger JIT compilation
 3. Commits the container (with compiled kernels) as the final image
 
-> **Note**: The first build takes ~5 minutes due to JIT compilation. Subsequent inference runs will be much faster (~9 seconds vs ~3 minutes).
+The build pins the NVIDIA base-image digest, OpenFold3 source revision, CUTLASS revision and Python package versions. It also checks the downloaded model checkpoint's SHA-256. The warm-up uses the bundled ubiquitin example without contacting an MSA server; ordinary inference retains its existing settings.
+
+For a fresh build under a new name, preserving existing image tags:
+
+```bash
+BUILD_NO_CACHE=true ./build.sh openfold3-spark:rebuild-check
+```
+
+The tested no-cache build on 24 October 2026 took about **12 minutes**, including downloading dependencies and weights, compiling kernels and running warm-up inference. Time depends on the network and machine. `SKIP_WARMUP=true ./build.sh IMAGE:TAG` builds without GPU pre-compilation; the first inference will then compile kernels.
+
+This is a version-pinned rebuild, not a promise of identical Docker image bytes. Ubuntu package repositories and download services remain external dependencies. See [build and verification details](docs/reproducibility.md).
 
 ### 2. Run Inference
 
@@ -50,16 +62,25 @@ Total Queries Processed: 1
   - Successful Queries:  1
 ```
 
+This confirms successful execution. **Default fast inference is not guaranteed to produce identical outputs for repeated runs with the same seed.** Upstream atom-to-token accumulation and the DeepSpeed attention path can introduce numerical variation. This was observed in both the retained image and the clean rebuild.
+
+For an opt-in deterministic comparison, use the [verification procedure](docs/reproducibility.md#deterministic-verification). It enables deterministic PyTorch operations and standard attention without changing normal `run_openfold` behaviour. The [24 October validation record](docs/rebuild_validation_241026.md) describes the checks and their limits.
+
 ## Repository Structure
 
 - `Dockerfile`: The complete build recipe.
 - `build.sh`: Build script with GPU-aware pre-compilation workflow.
 - `patch_ds.py`: Python script to patch DeepSpeed for Blackwell compatibility.
+- `runtime-constraints.txt`: Version constraints from the verified CUDA 13 runtime.
+- `tools/deterministic_inference.py`: Opt-in deterministic inference wrapper.
+- `tools/compare_predictions.py`: Exact comparison of model and confidence outputs.
+- `docs/reproducibility.md`: Build identities, nondeterminism and verification commands.
 - `README.md`: This guide.
 
 ## Technical Details
 
 - **Base Image**: `nvcr.io/nvidia/pytorch:25.11-py3`
+- **OpenFold3 Source**: `d8afcd3485388d28b2dfd949a202672720693668` (v0.3.1)
 - **CUDA Version**: 13.0
 - **PyTorch Version**: 2.10
 - **DeepSpeed**: 0.15.4 (Pinned to avoid Muon optimizer conflicts)
@@ -131,16 +152,18 @@ To run inference on your own proteins, create a JSON query file:
 
 ```json
 {
-  "name": "my_protein",
-  "modelSeeds": [42],
-  "sequences": [
-    {
-      "protein": {
-        "id": "A",
-        "sequence": "MKTAYIAKQRQISFVKSHFSRQ..."
-      }
+  "seeds": [42],
+  "queries": {
+    "my_protein": {
+      "chains": [
+        {
+          "molecule_type": "protein",
+          "chain_ids": ["A"],
+          "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG"
+        }
+      ]
     }
-  ]
+  }
 }
 ```
 
@@ -156,7 +179,7 @@ docker run --gpus all --ipc=host --shm-size=64g \
     --output_dir=/output
 ```
 
-See the [OpenFold3 documentation](https://github.com/aqlaboratory/openfold) for full query format details including multi-chain complexes, ligands, and DNA/RNA.
+See the [OpenFold3 documentation](https://github.com/aqlaboratory/openfold-3) for full query format details including multi-chain complexes, ligands, and DNA/RNA.
 
 ## Batch Processing
 
@@ -179,6 +202,8 @@ done
 
 - **Hardware**: NVIDIA GPU with CUDA support (tested on DGX Spark with GB10)
 - **Docker**: 20.10+ with NVIDIA Container Toolkit
+- **Host Python**: 3.11+ for the build-output checks and comparison tool
+- **Network**: Access to NGC, GitHub, Ubuntu/Python package repositories and the public model checkpoint during the build. The build warm-up and quick deterministic check do not require an MSA server.
 - **Disk Space**: ~30GB for the Docker image
 - **Memory**: 64GB+ recommended (set via `--shm-size`)
 
@@ -197,12 +222,16 @@ The CUDA kernels weren't pre-compiled. Rebuild the image using `./build.sh` whic
 ### Slow First Run (~3 minutes)
 This is expected on a fresh build. The `build.sh` script pre-compiles kernels to avoid this. If you're seeing slow runs, the image may not have been properly warmed up.
 
+### Repeated runs give different predictions
+
+Small CUDA floating-point differences can propagate through recycling and diffusion, even with a fixed seed. See [nondeterminism and deterministic verification](docs/reproducibility.md). This is distinct from a missing or different model checkpoint; the build verifies the checkpoint checksum.
+
 ## Resources
 
-- [OpenFold3 GitHub](https://github.com/aqlaboratory/openfold)
+- [OpenFold3 GitHub](https://github.com/aqlaboratory/openfold-3)
 - [NVIDIA NGC PyTorch Containers](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch)
 - [DeepSpeed Documentation](https://www.deepspeed.ai/)
 
 ## License
 
-This deployment is provided for use with OpenFold3. See the [OpenFold License](https://github.com/aqlaboratory/openfold/blob/main/LICENSE) for terms.
+This deployment is provided for use with OpenFold3. See the [OpenFold3 License](https://github.com/aqlaboratory/openfold-3/blob/d8afcd3485388d28b2dfd949a202672720693668/LICENSE) and upstream model-parameter terms.

@@ -4,7 +4,7 @@
 # Base Image: NGC PyTorch 25.11-py3 (Contains CUDA 13.0, PyTorch 2.10)
 # This base image provides native Blackwell nvrtc sm_120/sm_121 support.
 
-FROM nvcr.io/nvidia/pytorch:25.11-py3
+FROM nvcr.io/nvidia/pytorch:25.11-py3@sha256:417cbf33f87b5378849df37983552cd1f8bc8b62fe1ceabe004de816a55dff21
 
 # -----------------------------------------------------------------------------
 # Build Configuration
@@ -33,6 +33,8 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # -----------------------------------------------------------------------------
 # Python Dependencies
 # -----------------------------------------------------------------------------
+COPY runtime-constraints.txt /opt/runtime-constraints.txt
+ENV PIP_CONSTRAINT=/opt/runtime-constraints.txt
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install --no-cache-dir \
     rdkit biopython typing-extensions modelcif memory_profiler \
@@ -58,7 +60,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # -----------------------------------------------------------------------------
 WORKDIR /opt
 RUN git clone https://github.com/NVIDIA/cutlass --branch v3.6.0 --depth 1 \
-    && git clone https://github.com/aqlaboratory/openfold-3.git
+    && test "$(git -C /opt/cutlass rev-parse HEAD)" = "bf9da7b76c766d7ee7d536afc77880a4ef1f1156" \
+    && git clone https://github.com/aqlaboratory/openfold-3.git \
+    && git -C /opt/openfold-3 checkout --detach d8afcd3485388d28b2dfd949a202672720693668
 
 # Install OpenFold3 (--no-deps prevents overwriting NGC PyTorch)
 WORKDIR /opt/openfold-3
@@ -81,9 +85,10 @@ RUN pip install --no-deps -e .
 RUN mkdir -p /root/.openfold3 /root/.triton/autotune
 
 # Download model parameters
-RUN bash /opt/openfold-3/openfold3/scripts/download_openfold3_params.sh --download_dir=/root/.openfold3
-
-
+RUN bash /opt/openfold-3/openfold3/scripts/download_openfold3_params.sh --download_dir=/root/.openfold3 \
+    && echo "aedd8f3eb814e3926c8974ef34c9499df224443f173b7e396c97684da6e3eeb6  /root/.openfold3/of3_ft3_v1.pt" | sha256sum --check -
+# Verification is opt-in; the normal CLI and model configuration are unchanged.
+COPY tools /opt/openfold3-deployment/tools
 
 WORKDIR /opt/openfold-3
 CMD ["/bin/bash"]

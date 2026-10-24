@@ -9,16 +9,20 @@
 # Default: openfold3-spark:latest
 #
 # Environment Variables:
-#   SKIP_WARMUP=true  - Skip the pre-compilation step (faster build, slower first run)
+#   SKIP_WARMUP=true  - Skip pre-compilation (slower first inference)
+#   BUILD_NO_CACHE=true - Rebuild every Docker layer using the pinned inputs
 # =============================================================================
 
 # Enable BuildKit for cache mounts (required for NGC 25.11 / CUDA 13.0)
 export DOCKER_BUILDKIT=1
 
-set -e
+set -euo pipefail
+
+# Resolve the build context independently of the caller's working directory.
+cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 IMAGE_NAME="${1:-openfold3-spark:latest}"
-BASE_IMAGE="${IMAGE_NAME%:*}:base"
+BASE_IMAGE="${IMAGE_NAME}-base"
 CONTAINER_NAME="openfold3-warmup-$$"
 SKIP_WARMUP="${SKIP_WARMUP:-false}"
 START_TIME=$(date +%s)
@@ -41,7 +45,11 @@ echo ""
 
 # Step 1: Build base image (without GPU)
 echo "[1/4] Building base image..."
-docker build -t "${BASE_IMAGE}" .
+BUILD_FLAGS=(--pull)
+if [ "${BUILD_NO_CACHE:-false}" = "true" ]; then
+    BUILD_FLAGS+=(--no-cache)
+fi
+docker build "${BUILD_FLAGS[@]}" -t "${BASE_IMAGE}" .
 
 if [ "$SKIP_WARMUP" = "true" ]; then
     echo ""
@@ -70,10 +78,24 @@ else
         python3 -m openfold3.run_openfold predict \
         --query_json=/opt/openfold-3/examples/example_inference_inputs/query_ubiquitin.json \
         --output_dir=/tmp/warmup_output \
-        --use_templates=false; then
+        --use_templates=false \
+        --use_msa_server=false; then
         echo "ERROR: Warmup inference failed!"
         exit 1
     fi
+
+    # The upstream CLI may exit zero even if an individual query fails.
+    # Require a complete successful summary and all prediction triplets.
+    WARMUP_CHECK=$(mktemp -d)
+    docker cp "${CONTAINER_NAME}:/tmp/warmup_output/." "${WARMUP_CHECK}"
+    if ! python3 tools/compare_predictions.py \
+        "${WARMUP_CHECK}" "${WARMUP_CHECK}" > /dev/null; then
+        echo "ERROR: Warmup produced missing or failed predictions."
+        echo "       Warmup evidence retained at ${WARMUP_CHECK}"
+        exit 1
+    fi
+    # Keep this small validation evidence; do not prune images or other outputs.
+    echo "      Warmup validation evidence: ${WARMUP_CHECK}"
 
     # Commit the container to the final image
     echo ""

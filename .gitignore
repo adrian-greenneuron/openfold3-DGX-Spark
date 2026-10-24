@@ -4,3 +4,8 @@ output/
 
 # Log files
 *.log
+
+# Local verification outputs and Python caches
+verification/
+__pycache__/
+*.pyc
