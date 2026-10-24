@@ -6,3 +6,5 @@ weights
 output
 verification
 nsight_profiles
+.modern-build
+modern-output

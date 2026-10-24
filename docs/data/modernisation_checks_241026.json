@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-24",
+  "working_default_changed": false,
+  "legacy": {
+    "source": "d8afcd3485388d28b2dfd949a202672720693668",
+    "deepspeed": "0.19.8",
+    "torch": "2.10.0a0+b558c986e8.nv25.11",
+    "checkpoint": {
+      "size": 2288027095,
+      "sha256": "aedd8f3eb814e3926c8974ef34c9499df224443f173b7e396c97684da6e3eeb6"
+    },
+    "deterministic_prediction_files": 15,
+    "deterministic_identical": true
+  },
+  "current": {
+    "source": "a83cb119f58a86306f9d66ca528ef2a0fffad250",
+    "model_version": "0.5.0",
+    "torch": "2.12.1",
+    "deepspeed": "0.19.2",
+    "python": "3.14.6",
+    "checkpoint": {
+      "filename": "of3-ob-2025-06-30-174k.pt",
+      "bytes": 2287872989,
+      "sha256": "bd43301c011d5f87580d3e8b548658869433e4488399feb03035ba248f8e29e4"
+    },
+    "passed_examples": [
+      "ubiquitin",
+      "dna_ptm",
+      "protein_ligand"
+    ],
+    "mcl1_inference_seconds": 251.75650569799473
+  },
+  "matched_legacy_speed": {
+    "protocol": "One warm-up and two timed CLI repeats; same saved MSAs/query/seed; templates and MSA server disabled; default fast model settings; new Python process per repeat; no concurrent candidate inference; container creation excluded.",
+    "records": [
+      {
+        "dataset": "ubiquitin",
+        "label": "retained",
+        "image": "openfold3-spark:cuda13-fixed",
+        "exit_code": 0,
+        "total_seconds": 155.57939084299142,
+        "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+        "timings": [
+          {
+            "replicate": 0,
+            "warmup": true,
+            "wall_seconds": 54.41745722098858,
+            "inference_seconds": 8.738718994020019,
+            "prediction_files": 15,
+            "start_loadavg": [
+              0.08447265625,
+              0.35693359375,
+              0.7197265625
+            ],
+            "end_loadavg": [
+              0.70947265625,
+              0.48388671875,
+              0.7431640625
+            ]
+          },
+          {
+            "replicate": 1,
+            "warmup": false,
+            "wall_seconds": 50.656077080988325,
+            "inference_seconds": 8.158342154987622,
+            "prediction_files": 15,
+            "start_loadavg": [
+              0.70947265625,
+              0.48388671875,
+              0.7431640625
+            ],
+            "end_loadavg": [
+              1.796875,
+              0.8017578125,
+              0.83740234375
+            ]
+          },
+          {
+            "replicate": 2,
+            "warmup": false,
+            "wall_seconds": 49.70838049298618,
+            "inference_seconds": 8.10109157898114,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.796875,
+              0.8017578125,
+              0.83740234375
+            ],
+            "end_loadavg": [
+              1.45654296875,
+              0.86474609375,
+              0.85791015625
+            ]
+          }
+        ]
+      },
+      {
+        "dataset": "ubiquitin",
+        "label": "modern",
+        "image": "openfold3-modern-legacy-241026:portable",
+        "exit_code": 0,
+        "total_seconds": 148.6648887520132,
+        "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+        "timings": [
+          {
+            "replicate": 0,
+            "warmup": true,
+            "wall_seconds": 49.67956019699341,
+            "inference_seconds": 8.202173847006634,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.45654296875,
+              0.86474609375,
+              0.85791015625
+            ],
+            "end_loadavg": [
+              1.9912109375,
+              1.05419921875,
+              0.92138671875
+            ]
+          },
+          {
+            "replicate": 1,
+            "warmup": false,
+            "wall_seconds": 49.25751660001697,
+            "inference_seconds": 7.951649376016576,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.9912109375,
+              1.05419921875,
+              0.92138671875
+            ],
+            "end_loadavg": [
+              1.50244140625,
+              1.06103515625,
+              0.931640625
+            ]
+          },
+          {
+            "replicate": 2,
+            "warmup": false,
+            "wall_seconds": 49.11387731900322,
+            "inference_seconds": 7.916960903996369,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.50244140625,
+              1.06103515625,
+              0.931640625
+            ],
+            "end_loadavg": [
+              1.67529296875,
+              1.16259765625,
+              0.97412109375
+            ]
+          }
+        ]
+      },
+      {
+        "dataset": "mcl1",
+        "label": "retained",
+        "image": "openfold3-spark:cuda13-fixed",
+        "exit_code": 0,
+        "total_seconds": 694.747208899993,
+        "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+        "timings": [
+          {
+            "replicate": 0,
+            "warmup": true,
+            "wall_seconds": 230.53450844599865,
+            "inference_seconds": 184.7009752629965,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.67529296875,
+              1.16259765625,
+              0.97412109375
+            ],
+            "end_loadavg": [
+              1.9267578125,
+              1.42236328125,
+              1.10693359375
+            ]
+          },
+          {
+            "replicate": 1,
+            "warmup": false,
+            "wall_seconds": 232.11922627600143,
+            "inference_seconds": 185.0309976549761,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.9267578125,
+              1.42236328125,
+              1.10693359375
+            ],
+            "end_loadavg": [
+              1.26123046875,
+              1.3056640625,
+              1.11962890625
+            ]
+          },
+          {
+            "replicate": 2,
+            "warmup": false,
+            "wall_seconds": 230.27087753199157,
+            "inference_seconds": 184.6869123299839,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.26123046875,
+              1.3056640625,
+              1.11962890625
+            ],
+            "end_loadavg": [
+              1.0986328125,
+              1.18115234375,
+              1.09716796875
+            ]
+          }
+        ]
+      },
+      {
+        "dataset": "mcl1",
+        "label": "modern",
+        "image": "openfold3-modern-legacy-241026:portable",
+        "exit_code": 0,
+        "total_seconds": 691.5837783299794,
+        "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+        "timings": [
+          {
+            "replicate": 0,
+            "warmup": true,
+            "wall_seconds": 230.7692035450018,
+            "inference_seconds": 185.8029637739819,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.2509765625,
+              1.21142578125,
+              1.107421875
+            ],
+            "end_loadavg": [
+              1.13623046875,
+              1.263671875,
+              1.16259765625
+            ]
+          },
+          {
+            "replicate": 1,
+            "warmup": false,
+            "wall_seconds": 229.81183668298763,
+            "inference_seconds": 185.01263539301,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.13623046875,
+              1.263671875,
+              1.16259765625
+            ],
+            "end_loadavg": [
+              1.2685546875,
+              1.22607421875,
+              1.1640625
+            ]
+          },
+          {
+            "replicate": 2,
+            "warmup": false,
+            "wall_seconds": 229.12447685198276,
+            "inference_seconds": 184.6124959080189,
+            "prediction_files": 15,
+            "start_loadavg": [
+              1.2685546875,
+              1.22607421875,
+              1.1640625
+            ],
+            "end_loadavg": [
+              1.1689453125,
+              1.16015625,
+              1.14794921875
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Two repeats do not establish a statistically significant speedup.",
+    "Current-model timings use different weights and algorithms.",
+    "Fast DeepSpeed attention remains nondeterministic.",
+    "No new-model ground-truth accuracy evaluation."
+  ]
+}

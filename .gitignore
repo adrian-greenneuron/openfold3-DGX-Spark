@@ -9,3 +9,5 @@ output/
 verification/
 __pycache__/
 *.pyc
+.modern-build/
+modern-output/
