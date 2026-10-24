@@ -1,133 +1,30 @@
-#!/bin/bash
-# =============================================================================
-# OpenFold3 Docker Build Script with JIT Pre-compilation
-# =============================================================================
-# This script builds the OpenFold3 Docker image with pre-compiled CUDA kernels
-# by using a "docker commit" workflow that allows GPU access during the build.
-#
-# Usage: ./build.sh [IMAGE_NAME:TAG]
-# Default: openfold3-spark:latest
-#
-# Environment Variables:
-#   SKIP_WARMUP=true  - Skip pre-compilation (slower first inference)
-#   BUILD_NO_CACHE=true - Rebuild every Docker layer using the pinned inputs
-# =============================================================================
-
-# Enable BuildKit for cache mounts (required for NGC 25.11 / CUDA 13.0)
-export DOCKER_BUILDKIT=1
-
+#!/usr/bin/env bash
+# Build the unmodified official OpenFold3 Dockerfile and locked environment.
 set -euo pipefail
-
-# Resolve the build context independently of the caller's working directory.
-cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
-
-IMAGE_NAME="${1:-openfold3-spark:latest}"
-BASE_IMAGE="${IMAGE_NAME}-base"
-CONTAINER_NAME="openfold3-warmup-$$"
-SKIP_WARMUP="${SKIP_WARMUP:-false}"
-START_TIME=$(date +%s)
-
-# Cleanup function - ensures container is removed even on failure
-cleanup() {
-    if docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
-        echo "Cleaning up container ${CONTAINER_NAME}..."
-        docker rm -f "${CONTAINER_NAME}" 2>/dev/null || true
-    fi
-}
-trap cleanup EXIT
-
-echo "=============================================="
-echo " OpenFold3 Build with JIT Pre-compilation"
-echo "=============================================="
-echo "Target image: ${IMAGE_NAME}"
-echo "Skip warmup:  ${SKIP_WARMUP}"
-echo ""
-
-# Step 1: Build base image (without GPU)
-echo "[1/4] Building base image..."
-BUILD_FLAGS=(--pull)
-if [ "${BUILD_NO_CACHE:-false}" = "true" ]; then
-    BUILD_FLAGS+=(--no-cache)
-fi
-docker build "${BUILD_FLAGS[@]}" -t "${BASE_IMAGE}" .
-
-if [ "$SKIP_WARMUP" = "true" ]; then
-    echo ""
-    echo "[2/4] Skipping pre-compilation (SKIP_WARMUP=true)"
-    echo "[3/4] Tagging base image as final..."
-    docker tag "${BASE_IMAGE}" "${IMAGE_NAME}"
-    echo "[4/4] No cleanup needed."
+OF3_REPO_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+source "$OF3_REPO_DIR/versions.env"
+OF3_IMAGE="${1:-openfold3-official-spark:0.5.0}"
+OF3_BUILD_ROOT="${OF3_BUILD_ROOT:-$OF3_REPO_DIR/.build}"
+OF3_SOURCE_DIR="$OF3_BUILD_ROOT/openfold3-$OF3_SOURCE_COMMIT"
+export DOCKER_BUILDKIT=1
+mkdir -p "$OF3_BUILD_ROOT"
+if [[ ! -d "$OF3_SOURCE_DIR/.git" ]]; then
+    git clone --filter=blob:none --no-checkout "$OF3_SOURCE_URL" "$OF3_SOURCE_DIR"
 else
-    # Check GPU availability
-    echo ""
-    echo "[2/4] Checking GPU availability..."
-    if ! docker run --rm --gpus all "${BASE_IMAGE}" nvidia-smi &>/dev/null; then
-        echo "ERROR: GPU not available or nvidia-docker not configured."
-        echo "       Run with SKIP_WARMUP=true to build without pre-compilation."
+    if [[ -n "$(git -C "$OF3_SOURCE_DIR" status --porcelain --untracked-files=all)" ]]; then
+        echo "Refusing to build from a modified source checkout: $OF3_SOURCE_DIR" >&2
         exit 1
     fi
-    echo "      GPU detected successfully."
-
-    # Run warmup with GPU
-    echo ""
-    echo "      Running inference to pre-compile CUDA kernels..."
-    echo "      (This may take 2-3 minutes on first run)"
-    if ! docker run --gpus all --ipc=host --shm-size=64g \
-        --name "${CONTAINER_NAME}" \
-        "${BASE_IMAGE}" \
-        python3 -m openfold3.run_openfold predict \
-        --query_json=/opt/openfold-3/examples/example_inference_inputs/query_ubiquitin.json \
-        --output_dir=/tmp/warmup_output \
-        --use_templates=false \
-        --use_msa_server=false; then
-        echo "ERROR: Warmup inference failed!"
-        exit 1
-    fi
-
-    # The upstream CLI may exit zero even if an individual query fails.
-    # Require a complete successful summary and all prediction triplets.
-    WARMUP_CHECK=$(mktemp -d)
-    docker cp "${CONTAINER_NAME}:/tmp/warmup_output/." "${WARMUP_CHECK}"
-    if ! python3 tools/compare_predictions.py \
-        "${WARMUP_CHECK}" "${WARMUP_CHECK}" > /dev/null; then
-        echo "ERROR: Warmup produced missing or failed predictions."
-        echo "       Warmup evidence retained at ${WARMUP_CHECK}"
-        exit 1
-    fi
-    # Keep this small validation evidence; do not prune images or other outputs.
-    echo "      Warmup validation evidence: ${WARMUP_CHECK}"
-
-    # Commit the container to the final image
-    echo ""
-    echo "[3/4] Committing container with compiled kernels..."
-    docker commit \
-        --change 'CMD ["/bin/bash"]' \
-        --change 'WORKDIR /opt/openfold-3' \
-        "${CONTAINER_NAME}" "${IMAGE_NAME}"
-
-    # Cleanup is handled by trap, but we can remove container explicitly
-    echo ""
-    echo "[4/4] Cleaning up..."
-    docker rm "${CONTAINER_NAME}"
-    # Optionally remove the base image to save space
-    # docker rmi "${BASE_IMAGE}"
 fi
-
-END_TIME=$(date +%s)
-DURATION=$((END_TIME - START_TIME))
-
-echo ""
-echo "=============================================="
-echo " Build Complete!"
-echo "=============================================="
-echo "Image:    ${IMAGE_NAME}"
-echo "Duration: ${DURATION} seconds"
-echo ""
-echo "Run inference with:"
-echo "  docker run --gpus all --ipc=host --shm-size=64g \\"
-echo "      -v \$(pwd)/output:/output \\"
-echo "      ${IMAGE_NAME} \\"
-echo "      run_openfold predict \\"
-echo "      --query_json=/opt/openfold-3/examples/example_inference_inputs/query_ubiquitin.json \\"
-echo "      --output_dir=/output"
-echo ""
+git -C "$OF3_SOURCE_DIR" fetch origin "$OF3_SOURCE_COMMIT"
+git -C "$OF3_SOURCE_DIR" checkout --detach "$OF3_SOURCE_COMMIT"
+[[ "$(git -C "$OF3_SOURCE_DIR" rev-parse HEAD)" == "$OF3_SOURCE_COMMIT" ]]
+OF3_BUILD_OPTIONS=(--pull)
+if [[ "${OF3_NO_CACHE:-false}" == true ]]; then OF3_BUILD_OPTIONS+=(--no-cache); fi
+docker build "${OF3_BUILD_OPTIONS[@]}" \
+    -f "$OF3_SOURCE_DIR/docker/Dockerfile.pixi" \
+    --build-arg "BASE_IMAGE=$OF3_BASE_IMAGE" \
+    --build-arg "PIXI_VERSION=$OF3_PIXI_VERSION" \
+    --build-arg "PIXI_ENV=$OF3_PIXI_ENV" \
+    --target devel -t "$OF3_IMAGE" "$OF3_SOURCE_DIR"
+printf 'Built %s from official source %s\n' "$OF3_IMAGE" "$OF3_SOURCE_COMMIT"

@@ -1,8 +1,0 @@
-.git
-**/__pycache__
-**/*.pyc
-*.log
-weights
-output
-verification
-nsight_profiles
