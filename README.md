@@ -1,5 +1,7 @@
 # OpenFold3 on NVIDIA DGX Spark (Grace Blackwell / ARM64)
 
+> **Looking for the latest model?** We recommend the [official OpenFold3 repository](https://github.com/aqlaboratory/openfold-3) for the latest model, weights and installation instructions. This repository's `main` branch preserves the original tested DGX Spark deployment (OpenFold3 v0.3.1 and its original weights). Newer OpenFold3 versions and DGX Spark optimisations are being tested separately on the [development branch](https://github.com/adrian-greenneuron/openfold3-DGX-Spark/tree/modernise/upstream-runtime).
+
 This repository provides a specialized Docker deployment for running **OpenFold3** on the NVIDIA DGX Spark system, powered by **Grace Blackwell (GB10)** GPUs and **ARM64** architecture.
 
 This build solves specific compatibility issues ("Dependency Hell") encountered on the Blackwell platform, including:
