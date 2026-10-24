@@ -1,0 +1,703 @@
+{
+  "title": "Original and current official OpenFold3 models: separate speed and memory benchmark",
+  "date": "2026-10-24",
+  "hardware": {
+    "system": "NVIDIA DGX Spark",
+    "gpu": "NVIDIA GB10",
+    "cpu_logical_cores": 20,
+    "driver": "580.178.04"
+  },
+  "protocol": {
+    "purpose": "Original preview model versus current official model: different checkpoints and algorithms; not a software regression or accuracy comparison.",
+    "warmups": 1,
+    "timed_repeats": 2,
+    "system_sampling_interval_seconds": 0.1,
+    "timing_boundary": "New Python process, including imports, CUDA initialisation, model loading and prediction; excluding container creation, setup, validation and warmup.",
+    "primary_memory": "PyTorch peak CUDA allocated/reserved bytes over the complete child CLI; main-process RSS reported separately; never summed.",
+    "system_memory": "Sampled MemTotal minus MemAvailable; whole-system footprint and increase above pre-run baseline, not isolated process memory.",
+    "settings": {
+      "PYTHONHASHSEED": "0",
+      "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+      "OMP_NUM_THREADS": "16",
+      "use_templates": false,
+      "use_msa_server": false,
+      "seed": 42,
+      "normal_model_defaults": true
+    },
+    "versions": {
+      "original": {
+        "image": "openfold3-spark:cuda13-fixed",
+        "image_id": "sha256:15714be21d01d66e6b4ab9cea2bcbfc41d3097904a5f89b0e2607bc2de8c53b7",
+        "source": "d8afcd3485388d28b2dfd949a202672720693668",
+        "checkpoint_sha256": "aedd8f3eb814e3926c8974ef34c9499df224443f173b7e396c97684da6e3eeb6"
+      },
+      "official": {
+        "image": "openfold3-modern-current-241026:upstream",
+        "image_id": "sha256:4525ed7e30b4b5d2428ac02e6398b48ce0b2ac4d2fdc5bf7a3655632a25b7e17",
+        "source": "a83cb119f58a86306f9d66ca528ef2a0fffad250",
+        "checkpoint_sha256": "bd43301c011d5f87580d3e8b548658869433e4488399feb03035ba248f8e29e4"
+      }
+    },
+    "instrumentation_sha256": {
+      "measure_inference.py": "2e160575eab4ef811dd83d243d16377dab12ed53d3cd22625bb38d7d8afd170a",
+      "benchmark_resources.py": "e7dfc0fed14a7b6604195ee5a212c25dae0fead88900860fbb4850febef7e422",
+      "compare_predictions.py": "2ac422cf6830f11f691f3ddbf324b21bb0eb3d2a2944172d1df4abd9535a5426"
+    }
+  },
+  "datasets": {
+    "ubiquitin": {
+      "protein_residues": 76,
+      "protein_chains": 1
+    },
+    "mcl1": {
+      "protein_residues": 632,
+      "protein_chains": 4,
+      "ligands": 4
+    }
+  },
+  "conditions": [
+    {
+      "dataset": "ubiquitin",
+      "version": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "exit_code": 0,
+      "elapsed_including_setup_and_warmup_seconds": 152.65754576100153,
+      "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 51.26296381800785,
+          "inference_seconds": 8.23028147299192,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018082304,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4181794816,
+          "sampled_system_nonavailable_peak_bytes": 17908002816,
+          "sampled_system_increase_peak_bytes": 13726208000,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 511,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.07373046875,
+            0.08984375,
+            0.38427734375
+          ],
+          "end_loadavg": [
+            0.79443359375,
+            0.279296875,
+            0.4345703125
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 50.16419433799456,
+          "inference_seconds": 8.172037272976013,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018213376,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4391149568,
+          "sampled_system_nonavailable_peak_bytes": 17805643776,
+          "sampled_system_increase_peak_bytes": 13414494208,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 500,
+          "prediction_files": 15,
+          "start_loadavg": [
+            0.79443359375,
+            0.279296875,
+            0.4345703125
+          ],
+          "end_loadavg": [
+            1.52392578125,
+            0.5498046875,
+            0.51904296875
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 50.478426257992396,
+          "inference_seconds": 8.128633384010755,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1907443712,
+          "peak_cuda_reserved_bytes": 1927282688,
+          "peak_main_process_rss_bytes": 7018663936,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4291706880,
+          "sampled_system_nonavailable_peak_bytes": 18098982912,
+          "sampled_system_increase_peak_bytes": 13807276032,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 504,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.52392578125,
+            0.5498046875,
+            0.51904296875
+          ],
+          "end_loadavg": [
+            1.82421875,
+            0.76416015625,
+            0.5947265625
+          ]
+        }
+      ],
+      "effective_inference_settings": {
+        "num_recycles": 3,
+        "diffusion_samples": 5,
+        "diffusion_steps": 200,
+        "use_deepspeed_evo_attention": true,
+        "use_triton_triangle_kernels": false
+      },
+      "measured_medians": {
+        "wall_seconds": 50.32131029799348,
+        "inference_seconds": 8.150335328493384,
+        "peak_cuda_allocated_bytes": 1907443712.0,
+        "peak_cuda_reserved_bytes": 1927282688.0,
+        "peak_main_process_rss_bytes": 7018438656.0,
+        "system_nonavailable_baseline_bytes": 4341428224.0,
+        "sampled_system_nonavailable_peak_bytes": 17952313344.0,
+        "sampled_system_increase_peak_bytes": 13610885120.0
+      }
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "exit_code": 0,
+      "elapsed_including_setup_and_warmup_seconds": 104.70933878200594,
+      "query_sha256": "6090c9864aff01fff7d65522aa5d0141709afdfa7a4ee2be7dd9f13e7d6626b8",
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 32.37024287501117,
+          "inference_seconds": 9.392475866974564,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 8040558592,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4516462592,
+          "sampled_system_nonavailable_peak_bytes": 22695563264,
+          "sampled_system_increase_peak_bytes": 18179100672,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 324,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.9072265625,
+            0.859375,
+            0.63134765625
+          ],
+          "end_loadavg": [
+            2.60107421875,
+            1.18359375,
+            0.7509765625
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 26.534900486003608,
+          "inference_seconds": 6.248043438012246,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 7959638016,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4877307904,
+          "sampled_system_nonavailable_peak_bytes": 22861697024,
+          "sampled_system_increase_peak_bytes": 17984389120,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 266,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.60107421875,
+            1.18359375,
+            0.7509765625
+          ],
+          "end_loadavg": [
+            2.31494140625,
+            1.23291015625,
+            0.77978515625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 27.482907199009787,
+          "inference_seconds": 6.3160465260152705,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 1994707968,
+          "peak_cuda_reserved_bytes": 2009071616,
+          "peak_main_process_rss_bytes": 7825596416,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5757177856,
+          "sampled_system_nonavailable_peak_bytes": 22711324672,
+          "sampled_system_increase_peak_bytes": 16954146816,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 275,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.31494140625,
+            1.23291015625,
+            0.77978515625
+          ],
+          "end_loadavg": [
+            2.8154296875,
+            1.439453125,
+            0.86083984375
+          ]
+        }
+      ],
+      "effective_inference_settings": {
+        "num_recycles": 3,
+        "diffusion_samples": 5,
+        "diffusion_steps": 200,
+        "use_deepspeed_evo_attention": false,
+        "use_triton_triangle_kernels": true
+      },
+      "measured_medians": {
+        "wall_seconds": 27.008903842506697,
+        "inference_seconds": 6.282044982013758,
+        "peak_cuda_allocated_bytes": 1994707968.0,
+        "peak_cuda_reserved_bytes": 2009071616.0,
+        "peak_main_process_rss_bytes": 7892617216.0,
+        "system_nonavailable_baseline_bytes": 5317242880.0,
+        "sampled_system_nonavailable_peak_bytes": 22786510848.0,
+        "sampled_system_increase_peak_bytes": 17469267968.0
+      }
+    },
+    {
+      "dataset": "mcl1",
+      "version": "original",
+      "image": "openfold3-spark:cuda13-fixed",
+      "exit_code": 0,
+      "elapsed_including_setup_and_warmup_seconds": 694.1248947540007,
+      "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 230.5727294360113,
+          "inference_seconds": 185.2327607970219,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7165214720,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5621018624,
+          "sampled_system_nonavailable_peak_bytes": 42256224256,
+          "sampled_system_increase_peak_bytes": 36635205632,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2294,
+          "prediction_files": 15,
+          "start_loadavg": [
+            2.83056640625,
+            1.4658203125,
+            0.87255859375
+          ],
+          "end_loadavg": [
+            1.25830078125,
+            1.46240234375,
+            1.01708984375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 230.94059513497632,
+          "inference_seconds": 184.70821725501446,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7109627904,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5260529664,
+          "sampled_system_nonavailable_peak_bytes": 42258436096,
+          "sampled_system_increase_peak_bytes": 36997906432,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2290,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.25830078125,
+            1.46240234375,
+            1.01708984375
+          ],
+          "end_loadavg": [
+            1.087890625,
+            1.24267578125,
+            1.01220703125
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 230.77065543000936,
+          "inference_seconds": 185.54154235401074,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 24980105216,
+          "peak_cuda_reserved_bytes": 26210205696,
+          "peak_main_process_rss_bytes": 7110615040,
+          "torch": "2.10.0a0+b558c986e8.nv25.11",
+          "cuda": "13.0",
+          "openfold3": "0.3.1",
+          "deepspeed": "0.15.4",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4189069312,
+          "sampled_system_nonavailable_peak_bytes": 42252001280,
+          "sampled_system_increase_peak_bytes": 38062931968,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2290,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.087890625,
+            1.24267578125,
+            1.01220703125
+          ],
+          "end_loadavg": [
+            1.2412109375,
+            1.1767578125,
+            1.01806640625
+          ]
+        }
+      ],
+      "effective_inference_settings": {
+        "num_recycles": 3,
+        "diffusion_samples": 5,
+        "diffusion_steps": 200,
+        "use_deepspeed_evo_attention": true,
+        "use_triton_triangle_kernels": false
+      },
+      "measured_medians": {
+        "wall_seconds": 230.85562528249284,
+        "inference_seconds": 185.1248798045126,
+        "peak_cuda_allocated_bytes": 24980105216.0,
+        "peak_cuda_reserved_bytes": 26210205696.0,
+        "peak_main_process_rss_bytes": 7110121472.0,
+        "system_nonavailable_baseline_bytes": 4724799488.0,
+        "sampled_system_nonavailable_peak_bytes": 42255218688.0,
+        "sampled_system_increase_peak_bytes": 37530419200.0
+      }
+    },
+    {
+      "dataset": "mcl1",
+      "version": "official",
+      "image": "openfold3-modern-current-241026:upstream",
+      "exit_code": 0,
+      "elapsed_including_setup_and_warmup_seconds": 850.0152580540162,
+      "query_sha256": "e45479d0deaf580f6f0a70d4885dfdffe1b24e3b6e178747f41ad9778a5dc5a0",
+      "measurements": [
+        {
+          "replicate": 0,
+          "warmup": true,
+          "wall_seconds": 280.197584257985,
+          "inference_seconds": 255.7354301730229,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 8022540288,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4263399424,
+          "sampled_system_nonavailable_peak_bytes": 43649986560,
+          "sampled_system_increase_peak_bytes": 39386587136,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2789,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.08984375,
+            1.1455078125,
+            1.0107421875
+          ],
+          "end_loadavg": [
+            1.40087890625,
+            1.251953125,
+            1.1005859375
+          ]
+        },
+        {
+          "replicate": 1,
+          "warmup": false,
+          "wall_seconds": 273.658682623005,
+          "inference_seconds": 250.55714471099782,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7957299200,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 5029351424,
+          "sampled_system_nonavailable_peak_bytes": 43695759360,
+          "sampled_system_increase_peak_bytes": 38666407936,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2723,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.40087890625,
+            1.251953125,
+            1.1005859375
+          ],
+          "end_loadavg": [
+            1.15283203125,
+            1.267578125,
+            1.16259765625
+          ]
+        },
+        {
+          "replicate": 2,
+          "warmup": false,
+          "wall_seconds": 272.9932772780012,
+          "inference_seconds": 249.18856535601662,
+          "cli_returned_successfully": true,
+          "peak_cuda_allocated_bytes": 22219897856,
+          "peak_cuda_reserved_bytes": 23358078976,
+          "peak_main_process_rss_bytes": 7975845888,
+          "torch": "2.12.1",
+          "cuda": "13.0",
+          "openfold3": "0.5.0",
+          "deepspeed": "0.19.2",
+          "device": "NVIDIA GB10",
+          "system_memory_total_bytes": 130661138432,
+          "system_nonavailable_baseline_bytes": 4848959488,
+          "sampled_system_nonavailable_peak_bytes": 43886239744,
+          "sampled_system_increase_peak_bytes": 39037280256,
+          "system_sampling_interval_seconds": 0.1,
+          "samples": 2715,
+          "prediction_files": 15,
+          "start_loadavg": [
+            1.15283203125,
+            1.267578125,
+            1.16259765625
+          ],
+          "end_loadavg": [
+            1.2255859375,
+            1.2802734375,
+            1.19970703125
+          ]
+        }
+      ],
+      "effective_inference_settings": {
+        "num_recycles": 3,
+        "diffusion_samples": 5,
+        "diffusion_steps": 200,
+        "use_deepspeed_evo_attention": false,
+        "use_triton_triangle_kernels": true
+      },
+      "measured_medians": {
+        "wall_seconds": 273.3259799505031,
+        "inference_seconds": 249.87285503350722,
+        "peak_cuda_allocated_bytes": 22219897856.0,
+        "peak_cuda_reserved_bytes": 23358078976.0,
+        "peak_main_process_rss_bytes": 7966572544.0,
+        "system_nonavailable_baseline_bytes": 4939155456.0,
+        "sampled_system_nonavailable_peak_bytes": 43790999552.0,
+        "sampled_system_increase_peak_bytes": 38851844096.0
+      }
+    }
+  ],
+  "comparisons": {
+    "ubiquitin": {
+      "official_vs_original_percent_change": {
+        "wall_seconds": -46.32710539021148,
+        "inference_seconds": -22.922864780153596,
+        "peak_cuda_allocated_bytes": 4.574932169741541,
+        "peak_cuda_reserved_bytes": 4.243743199129479,
+        "peak_main_process_rss_bytes": 12.45545630369902,
+        "system_nonavailable_baseline_bytes": 22.476811907325,
+        "sampled_system_nonavailable_peak_bytes": 26.927992016224913,
+        "sampled_system_increase_peak_bytes": 28.347773226962623
+      },
+      "cli_speed_ratio_original_over_official": 1.8631378226760036
+    },
+    "mcl1": {
+      "official_vs_original_percent_change": {
+        "wall_seconds": 18.396932981832357,
+        "inference_seconds": 34.975296295866286,
+        "peak_cuda_allocated_bytes": -11.049622634223578,
+        "peak_cuda_reserved_bytes": -10.88174107857257,
+        "peak_main_process_rss_bytes": 12.045519550864858,
+        "system_nonavailable_baseline_bytes": 4.536826769991387,
+        "sampled_system_nonavailable_peak_bytes": 3.6345353584364304,
+        "sampled_system_increase_peak_bytes": 3.5209436083250667
+      },
+      "cli_speed_ratio_original_over_official": 0.8446164734296342
+    }
+  },
+  "validation": [
+    {
+      "dataset": "ubiquitin",
+      "version": "original",
+      "replicate": 0,
+      "warmup": true,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "original",
+      "replicate": 1,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "original",
+      "replicate": 2,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "official",
+      "replicate": 0,
+      "warmup": true,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "official",
+      "replicate": 1,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "ubiquitin",
+      "version": "official",
+      "replicate": 2,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "original",
+      "replicate": 0,
+      "warmup": true,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "original",
+      "replicate": 1,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "original",
+      "replicate": 2,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "official",
+      "replicate": 0,
+      "warmup": true,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "official",
+      "replicate": 1,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    },
+    {
+      "dataset": "mcl1",
+      "version": "official",
+      "replicate": 2,
+      "warmup": false,
+      "prediction_files": 15,
+      "complete_successful_summary": true,
+      "finite_coordinates_and_confidences": true
+    }
+  ],
+  "image_preservation": {
+    "original_image_count": 69,
+    "missing_original_images": [],
+    "missing_original_tags": [],
+    "all_original_images_and_tags_preserved": true
+  },
+  "limitations": [
+    "Different model parameters, software versions and default kernels; this does not isolate the effect of runtime changes or establish accuracy.",
+    "Two measured repeats per condition, one seed and two small public examples; not a capacity or population-level performance study.",
+    "Saved MSAs reused and templates disabled; MSA construction, templates, initial setup, container creation and first compilation are outside measured CLI time.",
+    "System memory is sampled every 0.1 seconds using MemTotal minus MemAvailable. It includes background activity and can miss brief peaks; baseline subtraction does not isolate all model memory.",
+    "CUDA allocator peaks and main-process RSS describe different allocation domains and must not be added together on unified-memory hardware."
+  ]
+}

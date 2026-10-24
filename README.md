@@ -4,6 +4,8 @@ This repository provides a specialized Docker deployment for running **OpenFold3
 
 **Modernisation candidates (24 October 2026):** [two separately tested build profiles](docs/modernisation_241026.md) are available: the original model with stock DeepSpeed and build-time attention compilation, and the current official OpenFold3/Pixi environment with newer weights. The established `./build.sh` workflow and working default are retained.
 
+The [separate original-versus-official model benchmark](docs/official_model_benchmark_241026.md) reports speed and peak memory: the official model was 1.86× faster on ubiquitin but 18.4% slower on the MCL1 complex. These models use different weights; the results do not establish their relative prediction accuracy.
+
 This build solves specific compatibility issues ("Dependency Hell") encountered on the Blackwell platform, including:
 - **Triton Compatibility**: NGC 25.11 includes native Triton 3.5.0 with `sm_121` (Blackwell) support.
 - **DeepSpeed Fixes**: Patches DeepSpeed JIT compilation to correctly parse `sm_121` architecture flags (mapping to `sm_120` for NVCC compatibility).

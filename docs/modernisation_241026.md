@@ -101,7 +101,7 @@ The unmodified official build completed successfully, then produced complete fiv
 - Modified DNA: the bundled 13-nucleotide example.
 - MCL1: four protein chains totalling 632 residues, plus four ligands, using the same saved MSA inputs as the original-model tests.
 
-The MCL1 inference timer reported **251.76 seconds** for one run. That used different weights and algorithms, includes an initial shape-specific compilation context, and was not part of the matched original-model benchmark. It should not be interpreted as a clean runtime regression or an accuracy comparison.
+The subsequent [separate official-model benchmark](official_model_benchmark_241026.md) measured speed and peak memory against the retained model, with one warm-up and two timed repeats per condition. Official-model CLI time was **46.3% lower on ubiquitin** and **18.4% higher on MCL1**. MCL1 CUDA tensor allocation fell **11.0%**, but sampled whole-system peak memory rose **3.6%**. The different weights and algorithms make this a comparison of complete model/runtime combinations, not a software regression or an accuracy comparison.
 
 Upstream emitted a warning that its Triton Evoformer kernel uses an untuned configuration on this NVIDIA backend. End-to-end execution passed, but wider performance testing and ground-truth accuracy evaluation remain to be done. The original-model deterministic verification results do not qualify the new model's repeatability.
 
