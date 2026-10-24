@@ -74,14 +74,20 @@ Benchmarks run on **NVIDIA DGX Spark** (Grace Blackwell GB10, 20 CPU cores, 119G
 
 ### CUDA 13.0 Performance (NGC 25.11)
 
-| Query | Total Time | Inference | Memory |
-|-------|------------|-----------|--------|
-| `query_ubiquitin.json` | 55s | 8s | 16 GB |
-| `query_homomer.json` | 51s | 8s | 16 GB |
-| `query_dna_ptm.json` | 47s | 6s | 15 GB |
-| `query_multimer.json` | 173s | 2m 0s | 26 GB |
-| `query_protein_ligand.json` | 228s | 3m 0s | 42 GB |
-| `query_protein_ligand_multiple.json` | 403s | 5m 55s | **54 GB** |
+| Query | Protein / complex size | Total Time | Inference | Memory |
+|-------|------------------------|------------|-----------|--------|
+| `query_ubiquitin.json` | One protein chain: **76 aa** | 55s | 8s | 16 GB |
+| `query_homomer.json` | Leucine-zipper homodimer: 2 × 34 = **68 aa** | 51s | 8s | 16 GB |
+| `query_dna_ptm.json` | One modified DNA strand: **13 nucleotides** | 47s | 6s | 15 GB |
+| `query_multimer.json` | Four protein chains (`7cnx`): 2 × 253 + 2 × 42 = **590 aa** | 173s | 2m 0s | 26 GB |
+| `query_protein_ligand.json` | Four MCL1 chains: 4 × 158 = **632 aa**, plus three ATP molecules and one other ligand | 228s | 3m 0s | 42 GB |
+| `query_protein_ligand_multiple.json` | **Two separate queries**, each with four MCL1 chains (**632 aa**) plus four ligands | 403s | 5m 55s | **54 GB** |
+
+Sizes were checked against the benchmark input JSON files and retained prediction outputs. **aa** means amino-acid residues, summed across all protein-chain copies in one complex.
+
+The largest individual complex tested contained **632 amino-acid residues across four protein chains, plus four ligands**, with a reported peak system memory of **42 GB**. The **54 GB** result is for a run processing two separate complexes, not one combined 1,264-residue complex.
+
+**Maximum supported size has not been established.** These are successful example benchmarks; we have not tested progressively larger proteins or complexes to find the point at which the Spark runs out of memory. The results therefore do not define the largest complex that fits in its 119 GB of unified memory.
 
 > **Total Time** = Container startup + model loading + inference + cleanup  
 > **Memory** = Peak system memory (unified CPU/GPU). System at rest uses ~5 GB. DGX Spark has 119 GB total.
