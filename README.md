@@ -92,5 +92,7 @@ No experimental diffusion cache or original-style acceleration wrapper is
 included. Repeated predictions are not guaranteed to be byte-identical, and the
 maximum complex size that fits in memory has not been established.
 
-See [reproducibility and validation](docs/reproducibility.md) for the exact build
-inputs and verification procedure.
+A no-cache build from a fresh GitHub clone and an example prediction with freshly
+downloaded parameters passed on **24 October 2026**. See the
+[validation record](docs/official_build_validation_241026.md) and
+[reproducibility instructions](docs/reproducibility.md).

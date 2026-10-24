@@ -1,0 +1,126 @@
+{
+  "date": "24 October 2026",
+  "repository_commit_tested": "94610d21094968193feb4ecf134b8d6be4fbb314",
+  "build": {
+    "purpose": "Fresh GitHub clone and no-cache official Docker build",
+    "repository_commit": "94610d21094968193feb4ecf134b8d6be4fbb314",
+    "image_tag": "openfold3-official-spark:clean-241026",
+    "started_utc": "2026-10-24T21:48:14.056347+00:00",
+    "no_cache": true,
+    "fresh_source_checkout": true,
+    "exit_code": 0,
+    "wall_seconds": 334.08462277200306,
+    "finished_utc": "2026-10-24T21:53:48.141091+00:00",
+    "image_id": "sha256:c5c9c9ca44369e655dca78f720d5be7a22f6da246465178632fc2afa156d8657"
+  },
+  "inference": {
+    "purpose": "Official-model inference using a freshly downloaded checkpoint and empty cache",
+    "repository_commit": "94610d21094968193feb4ecf134b8d6be4fbb314",
+    "image_tag": "openfold3-official-spark:clean-241026",
+    "started_utc": "2026-10-24T21:54:11.418655+00:00",
+    "fresh_checkpoint_cache": true,
+    "container": "of3-official-clean-run-241026",
+    "model_or_attention_overrides": false,
+    "msa_server": false,
+    "templates": false,
+    "exit_code": 0,
+    "wall_seconds_including_setup": 314.9344557589793,
+    "finished_utc": "2026-10-24T21:59:26.353210+00:00"
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "torch": "2.12.1",
+    "torch_cuda": "13.0",
+    "openfold3": "0.5.0",
+    "deepspeed": "0.19.2"
+  },
+  "official_source_commit": "a83cb119f58a86306f9d66ca528ef2a0fffad250",
+  "official_python_files_verified": 350,
+  "all_python_sources_match_pinned_upstream": true,
+  "outputs": {
+    "passing": true,
+    "prediction_files": 15,
+    "model_cifs": [
+      {
+        "file": "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_model.cif",
+        "atoms": 601,
+        "ca_residues": 76,
+        "finite_coordinates": true
+      },
+      {
+        "file": "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_model.cif",
+        "atoms": 601,
+        "ca_residues": 76,
+        "finite_coordinates": true
+      },
+      {
+        "file": "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_model.cif",
+        "atoms": 601,
+        "ca_residues": 76,
+        "finite_coordinates": true
+      },
+      {
+        "file": "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_model.cif",
+        "atoms": 601,
+        "ca_residues": 76,
+        "finite_coordinates": true
+      },
+      {
+        "file": "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_model.cif",
+        "atoms": 601,
+        "ca_residues": 76,
+        "finite_coordinates": true
+      }
+    ],
+    "confidence_json_files": 10,
+    "checkpoint_size_bytes": 2287872989,
+    "checkpoint_sha256": "bd43301c011d5f87580d3e8b548658869433e4488399feb03035ba248f8e29e4",
+    "memory_settings": {
+      "chunk_size": 1024,
+      "tune_chunk_size": true,
+      "use_deepspeed_evo_attention": false,
+      "use_cueq_triangle_kernels": false,
+      "use_triton_triangle_kernels": true,
+      "use_lma": false,
+      "msa_module": {
+        "swiglu_chunk_token_cutoff": null,
+        "swiglu_seq_chunk_size": null
+      },
+      "per_sample_token_cutoff": 750,
+      "per_sample_atom_cutoff": 10000,
+      "low_mem_validation": false,
+      "offload_inference": {
+        "template_module": false,
+        "msa_module": false,
+        "confidence_heads": true,
+        "token_cutoff": 2800
+      }
+    },
+    "diffusion_steps": 200,
+    "samples": 5,
+    "prediction_sha256": {
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_model.cif": "08ec63cfd2bac6b1707e0b138ca3ac4bff55dbb7ab5a0d1dc8e6781a4dc09be1",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_model.cif": "4d5886a52b91cf552212ab870d38bfa2eaa5917be61c79b70a6bbf26d7c32dda",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_model.cif": "819850f1a6a898e888282b0316111edb61e80b5ef9ed8c087416d53833a4af40",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_model.cif": "c05d3c1db42e8fe617751e2c0f0a75ba2a5b60679bcc5ae47857d4a34858d521",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_model.cif": "adff5f3a456b120d26a991a14c715c50739814f84607caa61850572444ee68c9",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences.json": "7f5fc4c37ec797f0dfe5aa89b3d68ba52f2d2e34527d1db2dd6ac0f2affcdeb1",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences.json": "e8cc0d06171f010d4350d98837fef123b0625a5ba2810c779387bf770bbd0f80",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences.json": "dec83164800fc54017983a324da92689278a4512933655403aa2efbe027239e4",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences.json": "6533223754de2bdcaf9814e90fb72c14c77412a95140fc9ab66553331d05e11b",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences.json": "0652fc1b619a201ae384a48ddf41d829d1377ad630bdd30686ab45c5c69819ff",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_1_confidences_aggregated.json": "480b5de033b0745d89760f990cd14bace572548a2f478c16d1fb47d971f9dacb",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_2_confidences_aggregated.json": "87944a83ff541855ba45d506360d4db29aab5eebd1ab931c8c2c9098b153fc05",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_3_confidences_aggregated.json": "3d5e691dd603f9b1eae11a11f365f964849df6f5406428c9cc3e758c57ab8180",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_4_confidences_aggregated.json": "7817ba2b07c98bdadc82f7f304df3399d38022cd3fb6a0560167f753acc21fd8",
+      "ubiquitin/seed_42/ubiquitin_seed_42_sample_5_confidences_aggregated.json": "3d2d0cef8b7840841962feffd3a86541ce7e4f7f631ccfca889454d820b2dc6b"
+    },
+    "timing": {
+      "ubiquitin/seed_42/timing.json": {
+        "runtime_s": 9.446626632998232
+      }
+    }
+  },
+  "existing_images_retained": true,
+  "scope": "Installation and successful finite-output smoke test, not a speed or biological accuracy benchmark"
+}

@@ -43,5 +43,7 @@ To preserve a verification container for inspection, set
 are not removed by either script. New containers are otherwise removed when they
 exit; bound outputs and model parameters remain on the host.
 
-Validation of this branch is in progress; a dated record will be added after the
-fresh build and inference check finish.
+The [24 October 2026 validation record](official_build_validation_241026.md)
+documents a successful no-cache build from a fresh GitHub clone and inference
+using an empty model cache. The [machine-readable record](official_build_validation_241026.json)
+contains the build identity, timings, runtime versions and output checks.
